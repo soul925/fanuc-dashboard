@@ -1,0 +1,117 @@
+.form{
+    max-width:700px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--text);
+}
+
+.form input,
+.form select,
+.form textarea{
+
+    width:100%;
+    padding:12px 15px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:#fff;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus{
+
+    border-color:var(--primary);
+    box-shadow:0 0 5px rgba(196,0,0,.3);
+
+}
+
+.form textarea{
+
+    min-height:120px;
+    resize:vertical;
+
+}
+
+.buttons{
+
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+
+}
+
+button{
+
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+button.primary{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+button.primary:hover{
+
+    background:var(--primary-dark);
+
+}
+
+button.secondary{
+
+    background:#6c757d;
+    color:#fff;
+
+}
+
+button.secondary:hover{
+
+    background:#5a6268;
+
+}
+
+button.success{
+
+    background:var(--success);
+    color:#fff;
+
+}
+
+button.success:hover{
+
+    opacity:.9;
+
+}
+
+button.danger{
+
+    background:var(--danger);
+    color:#fff;
+
+}
+
+button.danger:hover{
+
+    opacity:.9;
+
+}

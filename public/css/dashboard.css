@@ -1,0 +1,15 @@
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.page{
+    animation:fadeIn .3s ease;
+}
+
+.page h2{
+    margin-bottom:20px;
+    font-size:28px;
+}

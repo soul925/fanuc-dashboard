@@ -1,0 +1,33 @@
+{
+  "name": "fanuc-dashboard",
+  "version": "1.0.0",
+  "description": "FANUC OPC UA Dashboard for monitoring and controlling FANUC robots using OPC UA.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "fanuc",
+    "opcua",
+    "automation",
+    "robotics",
+    "dashboard",
+    "industrial",
+    "express",
+    "node-opcua"
+  ],
+  "author": "Swayam Rajshekhar Sabanavar",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "node-opcua": "^2.175.2",
+    "socket.io": "^4.8.3"
+  }
+}

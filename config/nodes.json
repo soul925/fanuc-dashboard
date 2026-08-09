@@ -1,0 +1,18 @@
+{
+  "robot": {
+    "model": "ns=3;i=30005",
+    "serial": "ns=3;i=30007",
+    "speed": "ns=3;i=30003",
+    "mode": "ns=3;i=50003",
+    "estop": "ns=3;i=50004",
+    "pstop": "ns=3;i=50005",
+    "program": "ns=3;i=40016"
+  },
+
+  "modbus": {
+    "di": "ns=1;i=301",
+    "do": "ns=1;i=302",
+    "ir": "ns=1;i=303",
+    "hr": "ns=1;i=304"
+  }
+}

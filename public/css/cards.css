@@ -1,0 +1,22 @@
+.card{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#666;
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:28px;
+    color:var(--primary);
+    font-weight:bold;
+}

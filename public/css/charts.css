@@ -1,0 +1,23 @@
+.chart-container{
+    background:var(--card);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    margin-top:20px;
+}
+
+.chart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.chart-header h3{
+    color:var(--secondary);
+}
+
+canvas{
+    width:100% !important;
+    max-height:400px;
+}

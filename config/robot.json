@@ -1,0 +1,11 @@
+[
+    {
+        "id": "robot1",
+        "name": "Production Robot",
+        "manufacturer": "FANUC",
+        "model": "R-30iB Plus",
+        "ip": "192.168.4.90",
+        "port": 4880,
+        "endpoint": "/FANUC/NanoUaServer"
+    }
+]

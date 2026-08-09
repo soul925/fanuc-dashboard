@@ -1,0 +1,38 @@
+.dark{
+
+    --background:#111827;
+
+    --card:#1f2937;
+
+    --text:#f3f4f6;
+
+    --border:#374151;
+
+    --secondary:#f9fafb;
+
+}
+
+.dark body{
+    background:var(--background);
+    color:var(--text);
+}
+
+.dark header{
+    background:var(--card);
+}
+
+.dark input,
+.dark select,
+.dark textarea{
+    background:#374151;
+    color:#fff;
+    border-color:#4b5563;
+}
+
+.dark table{
+    background:var(--card);
+}
+
+.dark td{
+    color:#fff;
+}
