@@ -1,0 +1,79 @@
+F Number: F00000    
+VERSION : HandlingTool         
+$VERSION: V10.10307     1/22/2026
+DATE:     21-AUG-26 17:09 
+
+ETHERNET CONFIGURATION::
+
+$HOSTNAME   :ROBOT
+TMI_ROUTER  :ROUTER
+TMI_ETHERAD :
+Subnet mask :255.255.255.0
+Host Table [17]:      QUICC0 addr:   127.0.0.1
+Host Table [18]:      QUICC1
+Host Table [19]:      QUICC2
+Host Table [20]:      ROUTER
+Host Table [21]:       PCJOG addr:192.168.0.100
+Host Table [22]:      CAMPRT addr:169.254.1.10
+Host Table [23]:      CAMRTR addr:192.168.1.10
+Host Table [24]:Software Operator Panel addr:192.168.0.100
+Host Table [25]:      QUICC3
+Host Table [26]:      QUICC4
+Server [1]:         FTP state: 3
+Server [2]:         FTP state: 3
+
+ETHERNET STATISTICS:
+TX octet count:        0
+TX pkt count:          0
+TX discarded pkts:     0
+TX discarded err pkts: 0
+TX unicast pkts:       0
+TX multicast pkts:     0
+TX broadcast pkts:     0
+TX underflow err pkt:  0
+TX single coll err pkt:0
+TX mult coll err pkt:  0
+TX late coll err pkt:  0
+TX redundant coll err: 0
+RX octet count:        0
+RX pkt count:          0
+RX discarded pkts:     0
+RX discarded err pkts: 0
+RX unknown prot pkts:  0
+RX unicast pkts:       0
+RX multicast pkts:     0
+RX broadcast pkts:     0
+RX crc err pkts:       0
+RX runt err pkts:      0
+RX align err pkts:     0
+link:                  0
+full duplex:           0
+speed:                 0
+
+ETHERNET STATISTICS:
+TX octet count:        0
+TX pkt count:          0
+TX discarded pkts:     0
+TX discarded err pkts: 0
+TX unicast pkts:       0
+TX multicast pkts:     0
+TX broadcast pkts:     0
+TX underflow err pkt:  0
+TX single coll err pkt:0
+TX mult coll err pkt:  0
+TX late coll err pkt:  0
+TX redundant coll err: 0
+RX octet count:        0
+RX pkt count:          0
+RX discarded pkts:     0
+RX discarded err pkts: 0
+RX unknown prot pkts:  0
+RX unicast pkts:       0
+RX multicast pkts:     0
+RX broadcast pkts:     0
+RX crc err pkts:       0
+RX runt err pkts:      0
+RX align err pkts:     0
+link:                  0
+full duplex:           0
+speed:                 0

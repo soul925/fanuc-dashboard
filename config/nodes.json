@@ -3,10 +3,11 @@
     "model": "ns=3;i=30005",
     "serial": "ns=3;i=30007",
     "speed": "ns=3;i=30003",
-    "mode": "ns=3;i=50003",
+    "mode": "ns=2;s=ModeState",
     "estop": "ns=3;i=50004",
     "pstop": "ns=3;i=50005",
-    "program": "ns=3;i=40016"
+    "program": "ns=3;i=40016",
+    "alarm": "ns=2;s=Alarm"
   },
 
   "modbus": {

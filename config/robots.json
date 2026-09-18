@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "id": "Robot_2",
+        "name": "R50IA",
+        "ip": "192.168.1.1",
+        "port": 4880,
+        "endpoint": "/FANUC/NanoUaServer",
+        "ftpIp": "192.168.1.1",
+        "ftpPort": 21,
+        "ftpUser": "anonymous",
+        "ftpPassword": "",
+        "tftpPort": 69,
+        "autoConnect": false,
+        "connected": false,
+        "manufacturer": "FANUC"
+    },
+    {
+        "id": "Robot_3",
+        "name": "ER",
+        "ip": "172.168.2.15",
+        "port": 4880,
+        "endpoint": "/FANUC/NanoUaServer",
+        "ftpIp": "172.168.2.15",
+        "ftpPort": 21,
+        "ftpUser": "anonymous",
+        "ftpPassword": "",
+        "tftpPort": 69,
+        "autoConnect": false,
+        "connected": false,
+        "manufacturer": "FANUC"
+    }
+]

@@ -1,0 +1,95 @@
+F Number: F00000    
+VERSION : HandlingTool         
+$VERSION: V10.10307     1/22/2026
+DATE:     21-AUG-26 12:08 
+DCS Version: V5.0.17
+Updated by: $Guest (Level:2)
+
+--- Cartesian Position Check -----------
+  Process time factor (Max.4000):   32
+ No.        G M Status     Comment
+  1 ENABLE  1 RD CHGD [                ]
+  2 DISABLE 1 WD ---- [                ]
+  3 DISABLE 1 WD ---- [                ]
+  4 DISABLE 1 WD ---- [                ]
+  5 DISABLE 1 WD ---- [                ]
+  6 DISABLE 1 WD ---- [                ]
+  7 DISABLE 1 WD ---- [                ]
+  8 DISABLE 1 WD ---- [                ]
+  9 DISABLE 1 WD ---- [                ]
+ 10 DISABLE 1 WD ---- [                ]
+ 11 DISABLE 1 WD ---- [                ]
+ 12 DISABLE 1 WD ---- [                ]
+ 13 DISABLE 1 WD ---- [                ]
+ 14 DISABLE 1 WD ---- [                ]
+ 15 DISABLE 1 WD ---- [                ]
+ 16 DISABLE 1 WD ---- [                ]
+ 17 DISABLE 1 WD ---- [                ]
+ 18 DISABLE 1 WD ---- [                ]
+ 19 DISABLE 1 WD ---- [                ]
+ 20 DISABLE 1 WD ---- [                ]
+ 21 DISABLE 1 WD ---- [                ]
+ 22 DISABLE 1 WD ---- [                ]
+ 23 DISABLE 1 WD ---- [                ]
+ 24 DISABLE 1 WD ---- [                ]
+ 25 DISABLE 1 WD ---- [                ]
+ 26 DISABLE 1 WD ---- [                ]
+ 27 DISABLE 1 WD ---- [                ]
+ 28 DISABLE 1 WD ---- [                ]
+ 29 DISABLE 1 WD ---- [                ]
+ 30 DISABLE 1 WD ---- [                ]
+ 31 DISABLE 1 WD ---- [                ]
+ 32 DISABLE 1 WD ---- [                ]
+
+    No.  1              Status:CHGD
+  1 Comment:   [                       ]
+  2 Enable/Disable:            ENABLE 
+  3 Method:    Restricted zone(Diagnal)
+  4 Group:                            1
+  5 Target model 1:         Robot model
+  6 Target model 2:             DISABLE
+  7 Target model 3:             DISABLE
+  8 Base frame:   User frame:     0
+    Position(mm):
+        Current      Point 1    Point 2
+  9 X      87.5        0.0     1160.0
+ 10 Y    2303.0     1223.0     1228.0
+ 11 Z    -344.3     1000.0    -1000.0
+ 12 Stop type:         Stop Category 0
+ 13 Disabling input: ---[  0:          ]
+ 14 Use Stop Position Prediction: Yes   
+ -- Speed check detail --
+    Limit(mm/s) / DSBL input
+  1 Limit 1:  250.0 / ---[  0]
+  2 Limit 2:  250.0 / ---[  0]
+  3 Limit 3:  250.0 / ---[  0]
+  4 Limit 4:  250.0 / ---[  0]
+  5 delay time:                   0 msec
+  6 Permissible distance(mm):       0.0
+ -- Stop Type By Direction --
+  1 Stop Type by Direction:     DISABLE
+  2 Disabling input: ---[  0:          ]
+  3 Permissible distance(mm):       0.0
+  4 Dir. Stop Type        Comment       
+  5 +X    Cat. 0    [                  ]
+  6 -X    Cat. 0    [                  ]
+  7 +Y    Cat. 0    [                  ]
+  8 -Y    Cat. 0    [                  ]
+  9 +Z    Cat. 0    [                  ]
+ 10 -Z    Cat. 0    [                  ]
+
+
+--- Signature Number (Dec) -------------
+                Current        Latch
+1 Total:        1648247868            0
+  Time:21-AUG-26 12:08              None
+2 Base:         1074100493            0
+  Time:21-AUG-26 12:08              None
+   Mastering:    336434605
+   Robot:      -1072368029
+   Other:      -1441238337
+3 Pos./Speed:  -1401785858            0
+  Time:21-AUG-26 12:08              None
+4 I/O connect:   610257513            0
+  Time:04-AUG-26 16:10              None
+

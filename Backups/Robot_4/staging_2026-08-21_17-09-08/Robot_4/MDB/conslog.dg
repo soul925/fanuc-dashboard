@@ -1,0 +1,856 @@
+$MED_PATH = 'C:\ProgramData\FANUC\FRVRC Media\V10.10'
+[ntinit] did not get /D switch, using default memory sizes!
+[ntinit] did not get /P switch, using default serial port config!
+Opening NTCFG.DAT from C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\ntcfg.dat
+[ntinit] Lock memory privilege enabled was disabled
+Memory Allocation Address for retained CMOS = 40500000
+[ntinit] NTABSWRK BaseAddress: 0x28242420 Size: 0x00002000
+[ntinit] NTROSWRK BaseAddress: 0x2823FC20 Size: 0x00002000
+[ntinit] LoadTable   BaseAddress: 0x07100000 4096 bytes
+[ntinit] SysAlloc BaseAddress: 0x08352F90 Size: 0x04000000
+Loading ROS task DLLs
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\SYIN.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\KSMON.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\SYNTITP.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\NTSERV.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\OSPPSERV.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\OSPPCONS.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\NTPORT.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\ERLOG.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MMMEMO.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MMMPTC.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\VMMAIN.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\VMPVAR.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\VMUTIL.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\DOSFILE4.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\OSPPCORE.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\CHND.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\CHIF.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\SYTIMQUE.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\PMGR.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\PGPX.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\APAX.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\APAMGR.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MGMMGR.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MPPLAN.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MIINTR.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MFFLTR.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\STPMPT.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\STSRIF.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\OSTCHP.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\OSTKEY.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\TPMAIN.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\WDVD.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\WDWM.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\WDKY.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\MJOG.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\IOSCAN.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\SYSHELL.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\DRASKER.DLL
+Loading C:\Program Files (x86)\FANUC\Shared\Off Line\FRVRC\V10.10\bin\FUTL.DLL
+[ntinit] Current locale is C
+[ntinit] Set locale to English_United States.1252
+[ntinit] MMRMIRShared   BaseAddress: 0x40800000
+[ntinit] MMRMIRSharedC0 could not allocate physical pages 0x00000522
+User.  SID: S-1-5-21-299502267-764733703-682003330-15644  FANUCINDIA\sheshadri.r 
+Virtualization is allowed.
+Virtualization is enabled.
+ 0. 00000000-00000013 -              SeShutdownPrivilege is disabled
+ 1. 00000000-00000017 -          SeChangeNotifyPrivilege is def & enb
+ 2. 00000000-00000019 -                SeUndockPrivilege is disabled
+ 3. 00000000-00000021 -    SeIncreaseWorkingSetPrivilege is disabled
+ 4. 00000000-00000022 -              SeTimeZonePrivilege is disabled
+
+[ntinit] Failed to DECOMMIT MMRMIRShared Address: 0x40800000   0x1E7
+[ntinit] MMRMIRShared   BaseAddress: 0x40800000
+[ntinit] MMRMIRSharedC0 BaseAddress: 0x42800000
+[ntinit] MMRMIRSharedC1 BaseAddress: 0x42800000
+[ntinit] ShadowFixed    BaseAddress: 0x46800000
+[ntinit] DCSDRAM       BaseAddress: 0x46A00000 4204004 bytes
+[ntinit] PrmWrkCache   BaseAddress: 0x10600000 3141632 bytes
+[ntinit] TmpWrk2 wanted 224MB and got 207MB
+[ntinit] TmpWrk   BaseAddress: 0x10900000 RegionSize:  65536KB Protections: 0x00000004
+[ntinit] TmpWrk2  BaseAddress: 0x33540000 RegionSize: 212672KB Protections: 0x00000004
+[ntinit] TmpWrkC1 BaseAddress: 0x46E10000 RegionSize: 425984KB Protections: 0x00000004
+[ntinit] ComWrk   BaseAddress: 0x0CC90000 33554432 bytes
+[ntinit] ComWrkC01 BaseAddress: 0x0C8D0000 1048576 bytes
+[ntinit] ROShared       BaseAddress: 0x0EC90000
+[ntinit] PLUMSharedC0  BaseAddress: 0x0F490000 8388608 bytes
+[ntinit] PLUMSharedC1  BaseAddress: 0x25000000 8388608 bytes
+[ntinit] SysPipe       BaseAddress: 0x25800000 16777216 bytes
+Switching states: old = STARTUP   new = STARTUP 
+[NTINIT] Frequency 10000000, Ticks/ms 10000 BusClock 40000000
+[osppc] Virtual Clock timer device resolution discovery suceeded, min res: 1 ms
+[ 1] [osinit] failed to make task  43 status 0x119
+[ 1] [osinit] failed to make task 244 status 0x119
+[ 1] [osinit] failed to make task 224 status 0x119
+[ 1] [osinit] failed to make task 353 status 0x119
+[NTINIT] Frequency 10000000, Ticks/ms 10000 BusClock 40000000
+[NTPORT] Ready for connections at 9099
+[NTPORT] Ready for connections at 9101
+[NTPORT] Ready for connections at 9102
+[NTPORT] Ready for connections at 9103
+[NTPORT] Ready for connections at 9104
+[dvdosfil] Failed to register devies, unknown CPU:3
+[mktskmem] use static 256 pages for tid: 159
+[ 1][vmicrepg_init] cacheing *pipe* 0x4034E0C0  0x0
+[ 3]Console Monitor (main core3)
+[ 3][DSFL] MAIN core1
+[ 3][syincore] TPKEY_IMG $82500C8
+[ 1]Console Monitor (main core1)
+[ 1][FUTL] request FAR cache from ASIC
+[ 1][DSFL] MAIN V8.90 PCMCIA-ATA USB RD@0x0 (-128) dfdevtbl@0x28EBF9E9
+[ 1]main bus clock 40
+[ 3][syincore] after spinit
+Updated $MC_PATH = C:\Users\SHESHA~1.R\DOCUME~1\MYWORK~1\HA6320~1\Robot_1\MC
+Updated $MED_PATH to = C:\ProgramData\FANUC\FRVRC Media\V10.10
+Updated $UD1_PATH to = C:\Users\SHESHA~1.R\DOCUME~1\MYWORK~1\HA6320~1\Robot_1\UD1
+Updated $UD2_PATH to = C:\Users\SHESHA~1.R\DOCUME~1\MYWORK~1\HA6320~1\Robot_1\UD2
+Updated $UT1_PATH to = C:\Users\SHESHA~1.R\DOCUME~1\MYWORK~1\HA6320~1\Robot_1\UT1
+[ 1][syinit] ** HOT START **
+[ 1][syinit] System Version V10.10307     1/22/2026
+[ 1][syinisb0] load table start mode = 0
+[ 1][ERLOG] Waiting for UIF to start up
+[ 1][syinisb0]VIRTUAL case,setting master_p->initializing to FALSE
+[ 1][ostkinit] ID $31 type 1D baud 31 version Q
+[ 1][ostkinit] TP Baud Rate 19200
+[ 1][ostkinit] sending F_WRIT to 201
+[ 1][ostkinit] TPWDOG_CHK+2 $1000
+[ 1][ostkinit] sending REQ_READ to 201
+[ 1][syinit] ** HOT START **
+[ 1][spinit] featuremod ptrs
+[ 1][dpsetlng] setting cur lang to ENGLISH     
+[ 1][syinit] start at 21-AUG-26 12:08:24 
+[NTSYIN_STEP] Startup Step #1 id: 1
+[ 1][syinistp] Start VMGR
+[ 1]VMGR for NGC V10.00
+[ 1][vminit] Core copy  memory allocation 0x1F4000 bytes
+[mktskmem] use static 256 pages for tid:  52
+[mktskmem] use static 256 pages for tid: 322
+[ 1][vmshadow_periodic] Normal power shutdown state = 0
+[ 3][vmaster_get] Waiting on Core 3 Task 187 for VMGR on Main
+[ 1][vminit] Loading 2 temp 63711480 remaining of 66953188
+[ 1][vminit_loadctx] Loaded FRB:\S-SYSTEM.PRV only
+[ 1][vminit_loadctx] Loaded FRB:\S-INTERN.PRV only
+[ 1][vminit_loadctx] Done Loading Time = 27258us
+[ 1][vminit] after 2 temp 60924112 remaining of 66953188, took 0ms
+[NTSYIN_STEP] Startup Step #2 id: 2
+[ 1][syinistp] Create device
+[ 1][NTFRCPY] Did not load \TMILIB.DLL
+[NTSYIN_STEP] Startup Step #3 id: 7
+[ 1][syinistp] Start PMON
+[ 1][syinit] spmk2tsk(HTCG), status = $0
+[ 1][TX] Start
+[ 1][cmt_main] Comet server extension starting
+[ 1][PMON] PC Monitor Task
+[ 1][pmon] error read dblovrd_enb
+[ 1][rpcm] create TCP/IP RPC service
+[ 1][svctcp_create] RPCMAIN Server ready for connections on 3002
+[ 1][rpcm] call softparts to register service
+[ 1][rpcdaqs] register RPCDAQS service
+[ 1][rpcm] wait for connection
+[ 1][HTCG] CGTP WEB Server starting
+[ 1]Web Enhancements installed
+[ 1][HTCG]: Binding to tcp port number 3080
+[ 1][HTCG] ready for connections, calling HCFC_STARTUP_C
+[ 1][PMON] Connecting to COMET
+[ 1][PMON] Connect ID is 3CE6FAAC
+[ 1][cmt_main_init] PMON connected $3CE6FAAC
+[ 1][syinit] spmk2tsk(HTPL), status = $0
+[ 1][HTPL] Public WEB Server starting
+[ 1]Web Enhancements installed
+[ 1][HTPL]: Binding to tcp port number 5080
+[ 1][HTPL] ready for connections
+[ 1][syinisb0] Legacy 2, tpid = 49
+[NTSYIN_STEP] Startup Step #4 id: 3
+[ 1][syinistp] Softpart loading
+[ 1][SYINISB0] Loading main system softparts please wait ...
+[ 1][NTFRCPY] Did not load \CERTMAN.DLL
+[ 1][NTFRCPY] Did not load \DCSISR.DLL
+[ 1][NTFRCPY] Did not load \DCSTSK.DLL
+[ 1][NTFRCPY] Did not load \DHCP.DLL
+[ 1][NTFRCPY] Did not load \DVHTT4.DLL
+[ 1][NTFRCPY] Did not load \FTPC.DLL
+[ 1][NTFRCPY] Did not load \IOSLCTSK.DLL
+[ 1][NTFRCPY] Did not load \PBCTLRUN.DLL
+[ 1][NTFRCPY] Did not load \PWMAINSP.DLL
+[ 1][NTFRCPY] Did not load \SECUTL.DLL
+[ 1][NTFRCPY] Did not load \SFTPMTE.DLL
+[ 1][NTFRCPY] Did not load \SNTP.DLL
+[ 1][NTFRCPY] Did not load \SYUSRCPY.DLL
+[ 1][SYSINISB0] spspload reference time 44355 ms, This Time 2168ms
+[NTSYIN_STEP] Startup Step #5 id: 4
+[ 1][syinistp] Image loading
+[ 1][vminit] Loading 3 temp 60344832 remaining of 66953188
+[ 1][vminit_loadctx] Loading all files (VMGR/PVAR Suspended)
+[ 1][vminit_loadctx] Done Loading Time = 130474us
+[ 1][vmshadow_cleanup] Redirected from task 187 to TID_VMSC
+[ 1][vminit] after 3 temp 57623956 remaining of 66953188, took 0ms
+[ 1][SYINISB0] Loading cores system softparts please wait ...
+[ 3][vmaster_get] Core 3 VMGR ready
+[ 3][vmaster_get] Type Tables Initialized on Core 3
+[ 1][SYSINISB0] spspload_cores load time 4ms
+[NTSYIN_STEP] Startup Step #6 id: 6
+[ 1][syinistp] Start TPMM
+[ 1][SYINISB0] total time 2531
+[NTSYIN_STEP] Startup Step #7 id: 8
+[ 1][syinistp] Top of TPMAIN
+[NTSYIN_STEP] Startup Step #8 id: 9
+[ 1][syinistp] Top of SYINISUB
+[ 1][SYINISUB] Saving user device MC:
+[ 1][SNPX] Client_Type 1, Port 18245
+[ 1][SNPX] Client_Type 2, Port 60008
+[NTSYIN_STEP] Startup Step #9 id: 10
+[ 1][syinistp] TP reset
+[NTSYIN_STEP] Startup Step #10 id: 11
+[ 1][syinistp] Start DIO system
+[ 1][syinit] : calling iosetup
+[ 1][TELNET] start
+[ 1][TELNET] debug address 2EAC308C
+[ 1][TELNET] Ethernet event flag received.
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1][ripini_main] SID_RIPSERV task start status = 0x380001
+[ 1][ripini_main] ERROR: Failed to read ph_members. status: 0x100006
+[NTSYIN_STEP] Startup Step #11 id: 12
+[ 1][syinistp] Initialize mnemonic softparts
+[ 1]pmgr-sector set 100
+[NTSYIN_STEP] Startup Step #12 id: 13
+[ 1][syinistp] Start MEMO
+[ 1][syinisub] Memory manager started
+[NTSYIN_STEP] Startup Step #13 id: 14
+[ 1][syinistp] Start WD related tasks
+[NTSYIN_STEP] Startup Step #14 id: 15
+[ 1][syinistp] Define TPMM windows
+[NTPORT] accept connection
+[FRSOCK] recv failed (no pending)! 0x2745 taskid: 188
+[FRSOCK] recv failed (no pending)! 0x2745 taskid: 188
+[NTPORT] accept connection
+[NTSYIN_STEP] Startup Step #15 id: 16
+[ 1][syinistp] Execute INIT2.COM
+[NTSYIN_STEP] Startup Step #16 id: 17
+[ 1][syinistp] Set VPR
+[NTSYIN_STEP] Startup Step #17 id: 18
+[ 3][vcam] wake up
+[ 1][syinistp] Reallocate group sysvars
+[ 3][vdat] wake up
+[ 3][vrmn] wake up
+[ 1][vmfndvar] [*SYSTEM*]$AUTOMODE_OV  truncated to $AUTOMODE_OV
+[ 1][vmfndvar] [*SYSTEM*]$AP_AUTOMODE_DO truncated to $AP_AUTOMODE
+[NTSYIN_STEP] Startup Step #18 id: 19
+[ 1][syinistp] Initialize motion internal vars
+[ 1][syinit] mosetvpr status <0>
+[NTSYIN_STEP] Startup Step #19 id: 20
+[ 1][syinistp] Set sysv pointers in ABSWRK
+[NTSYIN_STEP] Startup Step #20 id: 21
+[ 1][syinistp] Start ELOG
+[ 1][ERLOG] continue stat = 0x0
+[ 1][rcmplg] RCMCFG_BASE $6E603F0, rcmcfg_p $143EB218
+[ 1][RMCN] Loading FRS:\RCMCFG.XML
+[ 1][rcmlib] Encoded URL: /zdtdata/xml/ Len 13
+[NTSYIN_STEP] Startup Step #21 id: 22
+[ 1][syinistp] Call vminit_regprog
+[ 1][syinisub] VMGR called to register program with MEMO
+[ 1]  [load_safety_param(MAIN)]load_address:0x303000, size:0x143A4
+[ 1][sydcs_init_core3] ----- NDCS initialization start -----
+[NTSYIN_STEP] Startup Step #22 id: 23
+[ 1][syinistp] Call mcinit
+[NTSYIN_STEP] Startup Step #23 id: 24
+[ 1][syinistp] Load servo code
+[NTSYIN_STEP] Startup Step #24 id: 25
+[ 1][syinistp] Initialize motion sysvars
+[NTSYIN_STEP] Startup Step #25 id: 26
+[ 1][syinistp] Make PG variables
+[NTSYIN_STEP] Startup Step #26 id: 27
+[ 1][syinistp] TPMM spcalls
+[ 1][TPGL_InstID] allocated instance 0 1 0 255 
+[ 1][TPGL_InstID] allocated instance 1 2 0 255 
+[ 1][TPGL_InstID] allocated instance 2 3 0 255 
+[ 1][vmshadow_cleanup] Redirected from task 72 to TID_VMSC
+[NTSYIN_STEP] Startup Step #27 id: 28
+[ 1][syinistp] Start TPMM
+[ 1][sytimque]: trigger loaded 0 on 1
+[ 1][CHND] Low Priority Condition Handler started.
+[ 1][CHND] init done. starting scanning
+[ 1][tpmains_start] executing legacy mode case
+[NTSYIN_STEP] Startup Step #28 id: 29
+[ 1][syinistp] Start SID_PANEL softparts
+[ 1]syopinsp-Remote TP: 0
+[ 1][SYINIT] OCTK started 380001
+[NTSYIN_STEP] Startup Step #29 id: 30
+[ 1][syinistp] Start AMGR
+[NTSYIN_STEP] Startup Step #30 id: 31
+[ 1][syinistp] Start PMGR
+[ 1][ostksock_timeout] g_ce_mode 0
+[ 1][ostksock_create] Socket 1664 binding to IP port # 60004
+[ 1][ostksock_create] T-X IP address <001.001.001.011>
+[NTSYIN_STEP] Startup Step #31 id: 32
+[ 1][syinistp] Execute INIT3, CONTROL, COLD
+[ 1]"cold1.com for V10.10P/28 (FD V10.10.248)"
+[ 1]"menu.com for V10.10P/28 (FD V10.10.248)"
+[ 1]"menu.com complete"
+[ 1][SPRUNCMDF] status = 380001; "RUNTSK SID_GIGE" : COLD1.COM
+[ 1][vxmn] wake up
+[ 1][HTTP] WEB Server starting
+[ 1]Web Enhancements installed
+[ 1][HTTP]: Binding to tcp port number 80
+[ 1][HTTP] ready for connections
+[ 1][spruncmdf] +++ no abort
+[ 1][SPRUNCMDF] status = 380001; "RUNTSK SID_UCPY" : COLD1.COM
+[ 1][KCL] failed to locate DEV_KCL_C but continuing
+[ 1]
+
+KCL> [ASBN] started
+[ 1][spruncmdf] +++ no abort
+[ 1]Failed to initialize Publisher (status 0x80340000).
+[ 1][OPC UA] Port 4880
+[ 1]"cold1.com complete"
+[NTSYIN_STEP] Startup Step #32 id: 33
+[ 1][syinistp] Initialize motion sysvar phase 2
+[NTSYIN_STEP] Startup Step #33 id: 34
+[ 1][syinistp] Do restart
+[ 1][syinisub]4973 380001
+[ 1][FTP] FTP Interface V5.10
+[ 1][FTP] FTP debug addr = 29ACCC88
+[ 1][FTP] Ethernet event flag received.
+[ 1][SYINISUB] restored user device MC:
+[ 1][SYINISUB] Saving user device MC:
+[NTSYIN_STEP] Startup Step #34 id: 35
+[ 1][syinistp] Call moinit
+[ 1][DEBUG] Entering moinit
+[ 1][moinit] ----- start (tick:115737132)----- 
+[ 1][itpsel] ITP time set from 1 to 1 
+[ 1][itpsel] fdo buffer size is 2 
+[ 1][itpsel] COLDSTART 
+[ 1][moinit] (tick:115737132) send sysvar for vpr to motion core. 
+[ 3][moinit_core1] ----- init. vpr_p for motion core ----- 
+[ 3][moinit_core1] ----- init. vpr_p for motion core done ----- 
+[ 1][moinit] (tick:115737132) receive packet for setting vpr from motion core. done.
+[ 1]sswrkset ****rspaceg_p is 143B54AC
+[ 1][sswrkset] cp installed and enabled = 1
+[ 1][pmgr]shakehand px01, px_starting=126
+[ 1][pmgr]shakehand px02, px_starting=124
+[ 1][pmgr]shakehand px03, px_starting=120
+[ 1][pmgr]shakehand px04, px_starting=112
+[ 1][pmgr]shakehand px05, px_starting=96
+[ 1][pmgr]shakehand px06, px_starting=64
+[ 1][pmgr]shakehand px07, px_starting=0
+[ 1][PMPT] Not Required
+[ 1][SRIF] Not Need
+[ 1][mdaftini] SID_MDMAIN start. stat = 0 
+[ 1][ottask] eoat_p 1481EAC0
+[ 1][moinit] sid_motn slot 14 fcode E0007 state 10000B
+[ 3][moinitc1] (tick:116916780)----- init. motion core start ----- 
+[ 3][mdgencrebuf] osnewmem success for main buf. dbg_id:60CB0E58 size = 84000, sid = 1660 
+[ 3]sswrkset ****rspaceg_p is 5E64E7A8
+[ 3][sswrkset] cp installed and enabled = 1
+[ 3][cpsubtsk] CP SUB TASK STARTED!
+[ 3][mdaftini] SID_MDMOTN start. stat = 0 
+[ 3][moinitc1] motion task start 
+[ 3][miinit][G1] start. tick:116916780 
+[ 3][mpinit] ----- G1 PLAN motn core init. end tick:116916780-----
+[ 3][mginit] --- MMGR init motn core start TICK:116916780 ----
+[ 3][mginit] --- MMGR init motn core End TICK:116916780----
+[ 3][mfmain]c1 mfinit
+[ 3][mfinit]c1 start
+[ 3][moinit_core1] MOSPV_P->dst_mir_nullflg_p = 60A53A30
+[ 3][tbjtkini] finish wake up stat = 0
+[ 3][nectkini] finish wake up  stat = 0
+[ 3][moinit_core1] (tick:116916780) init. motion core done
+[ 1][mfmain]c0 mfinit
+[ 1][mfinit] start
+[ 1][mfsharedmem] MLXSNDPKT enabled.
+[ 3][mfinit]g:1  abc extra filter type = 0
+[ 1][mfinit]g:1  abc extra filter type = 0
+[ 1][moinit]Changed task ID  35 from priority  20 to priority  13
+[ 1][mdgencrebuf] osnewmem success for main buf. dbg_id:3B89AE94 size = 420000, sid = 535 
+[ 1][moinit] done (TICK:115737132) 
+[ 1][syinisub] Waiting for FLTR and DSP init done (EVB_TS_FLTR)
+[ 3][mfinidsp] All SCRDY check OK!
+[ 3][mfinidsp] --- start ITP ---
+[ 3] [INTH] start ITP
+[ 3][miinit] G1 -- end -- tick:116916780
+[ 3][vdat] vision pool size = 100000000
+[ 3][vdat] osmkmem(id=8, addr=57A043BC, size=100000000) 0x00000000
+[ 3][V:\ctlrvision\plugin\cs2g\cs2gsubs.c] request_code:66, stat:8FFF
+[ 1][syinisub] Completed FLTR and DSP init done (EVB_TS_FLTR)
+[ 1][SYINISUB] Checking $repower.$flag
+[NTSYIN_STEP] Startup Step #35 id: 40
+[ 1][syinistp] Start DIO scanning
+[ 1][syinisub] TPID = 0x31 !!!!!!!!!!!!!!!!!!!!!!!!!
+[NTSYIN_STEP] Startup Step #36 id: 36
+[ 1][syinistp] Semi-hot start init is completed
+[ 1][syinit] waiting for EVF_ENB_PWF...
+[ 1][SYINISUB] VIRTUAL not waiting on EVF_ENB_PWF
+[NTSYIN_STEP] Startup Step #37 id: 37
+[ 1][syinistp] Calibration
+[NTSYIN_STEP] Startup Step #38 id: 38
+[ 1][syinistp] Turn on servo
+[ 1][syinit] syrset(), status = $0
+[ 1][syinisub] VIRTUAL not waiting for servo on
+[ 1]INTP-127 Power fail detected
+[NTSYIN_STEP] Startup Step #39 id: 39
+[ 1][syinistp] Execute predefined program
+[ 1]R E S E T
+[ 1]SRVO-012 Power failure recovery
+[ 1][syinisub] Starting C shell 0x0
+[ 1][Shxsp] Ref positions in use
+[ 1][Shxsp] Initialize extension
+[ 1][syinisub]starting shell $0
+[NTSYIN_STEP] Startup Step #40 id: 41
+[ 1][syinistp] Syinisub is completed
+[ 1]"cold2.com for V10.10P/28 (FD V10.10.248)"
+[ 1]"cold2.com complete"
+[ 1][syinisub] Ready to run ATSHELL
+[ 1]Ready to run SHELL
+[ 1][syinisub] Start Karel shell 0x0
+[ 1][SYINISUB] restored user device MC:
+[ 1][syinit] Setting VMGR for in-line calls
+[ 1][syinit] end
+[ 1][syinisub] TICK_OFFSET 6E60374 to 0
+[ 1][vmshadow_cleanup] Redirected from task 72 to TID_VMSC
+[ 1][syinisub.c] spmk2tsk(HTTC), status = $0
+[ 1][RDM] Robot Discovery Method V10 @0x28AF1000
+[ 1][RDM] feature disabled
+[ 1][PRXY] Proxy Server Starting
+[ 1][PXPMON] PMON Proxy Server ready for connections on 50005
+[ 1][PXRPCM] RPCM Proxy Server ready for connections on 60009
+[ 1][PXTLNT] rosip not initialized
+[ 1][HTTC] COMM WEB Server starting
+[ 1][HTTC]: Binding to tcp port number 4080
+[ 1][COMM HTTC] ready for connections
+[ 1][symonutl] Getting data (3EA, 0)
+[ 1][symonutl] Fail to get mac from I2C (1)
+[ 1][vmshadow_cleanup] Redirected from task 72 to TID_VMSC
+[ 1]SYINISUB TOTAL TIME 3241
+[ 1][SYINISUB] restored user device MC:
+[NTSYIN_STEP] Startup Step #41 id: 42
+[ 1][syinistp] Initialize TP softparts
+[ 1][tpnvdt] Formating persistent storage
+[ 1][tpmains] Initialize all TPMM softparts
+[ 1][TPSPART] Found KAREL ATMSKCHG 200
+[ 1][TPSPART] Found KAREL EOATMENU 216
+[ 1][TPSPART] Found KAREL KLPLLOAD 217
+[ 1][TPSPART] Found KAREL ATPRGADJ 930
+[ 1][TPSPART] Found KAREL ATWAITRL 931
+[ 1][TPSPART] Found KAREL ATPRSCRN 932
+[ 1][TPSPART] Found KAREL ATINSTAL 936
+[ 1][TPKSINIT] dname -K943- not found devstat = 0 cfg $1419AC18
+[ 1][TPSPART] Found KAREL ATCELLIO 955
+[ 1][TPKSINIT] dname -K972- not found devstat = 0 cfg $1419A8E8
+[ 1][TPKSINIT] dname -K973- not found devstat = 0 cfg $1419A7E4
+[ 1][TPKSINIT] dname -K977- not found devstat = 0 cfg $1419A6E0
+[ 1][TPSPART] Found KAREL ATSOFTPA 992
+[ 1]Result size = 596
+[ 1][vmfndvar] [*SYSTEM*]$SYSTEM_TIMER truncated to $SYSTEM_TIME
+[ 1]Error opening file 'frs:\password.dt'
+[ 1]Error opening file 'fr:\fw_cfg_1.cfg'
+[ 1]Error opening file 'fr:\fw_cfg_2.cfg'
+[ 1]Error opening file 'fr:\sshs.cfg'
+[ 1]Error opening file 'fr:\ksyslog.cfg'
+[ 1]Error opening file 'cert:\robserv_cert.pem'
+[ 1][FTP] getservbyname failed
+[ 1][FTP] getservbyname failed
+[ 1][tpmains] Signal TPMM softparts initialized complete
+[NTSYIN_STEP] Startup Step #42 id: 43
+[ 1][syinistp] Starting Auto-Update if required
+[osppc] Tick time changed -600
+[NTSYIN_STEP] Startup Step #43 id: 0
+[ 1][syinistp] Startup is completed
+[ 1][tpmains] ready at 21-AUG-26 12:08:30 , OS_GTIME = 1505
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[FRSOCK] recv failed (no pending)! 0x2745 taskid: 188
+[ 1][PMON] Connecting to <127.000.000.001:5185>
+[ 1][PMON] Connect ID is 3CE6C0A4
+[ 1]PWD -034 Login (Guest) SETUP    from Teach Pendant
+[ 3][V:\ctlrvision\plugin\cs2g\cs2gsubs.c] request_code:66, stat:8FFF
+[ 3][vexe] wake up
+[ 3][vlog] wake up
+[ 3][vzdt] wake up
+[ 3][vtrn] wake up
+[ 1]SEC -005 FSAC RPC  allow connect 192.168.4.133
+[ 1]SMON> xyzrate 99=>192.168.4.133:17232
+[ 1]spcmd time 0 
+spcmd completed successfully.
+
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]SMON> tpdisc 0=>192.168.4.133:17232
+[ 1][ostkinit] Set g_wired = FALSE
+[ 1][ostkdisc] F_CANCL packet sent to 201
+[ 1][ostkdisc] TP is disconnected
+[ 1][ostchp] TP is disconnected
+[ 1][ostchp] Executing tpmulti_constop mode 1
+[ 1]PWD -052 Pwd Timeout (Guest) from Teach Pendant
+[ 1][tpaccn] disconnect current TP
+[sytp_disc] setting CGTPFLAG_TPDISC
+spcmd time 629 
+spcmd completed successfully.
+
+[ 1]SMON> tpconn 0=>192.168.4.133:17232
+[ 1][sytp_disc] resetting CGTPFLAG_TPDISC
+spcmd time 0 
+spcmd completed successfully.
+
+[ 1][ostkdisc] reconnect with iPendant
+[ 1][ostkdisc] ID $36 type 1D version Q
+[ 1][ostkinit] Set g_wired = TRUE
+[ 1][ostkdisc] TP is connected
+[ 1][ostchp] TP is connected in graphic mode
+[ 1][tpmains] ready at 21-AUG-26 12:08:56 , OS_GTIME = 25084
+[ 1][ostksock_timeout] g_ce_mode 0
+[ 1][ostksock_create] Socket 1804 binding to IP port # 60004
+[ 1][ostksock_create] T-X IP address <001.001.000.011>
+[ 1][sfcgtp] request PMON connect to 127.0.0.1:0
+[ 1][sfcgtp] ip 7F000001, port 0
+[ 1][PMON] Connecting to <127.000.000.001:60005>
+[ 1][clnttcp_create] connect call failed 10061
+[ 1][clnttcp_create] connect call failed $42003D
+[ 1]client2_p was not set. conn_type is set to PMON_CONN_COMET_C
+[ 1][cmt_rpc_connect] New tpmmconn[0] $3CE4E004
+[ 1][ostkey] recevied iPendant socket 15728641 from PMON
+[ 1][PMON] failed to send TP ready packet to secutl, status = 268 
+[ 1][PMON] Sent iPendant socket 15728641 to TKEY
+[ 1][PMON] Connect ID is 3CE4E004
+[ 1]jquery.js is loaded Time : 2757.699999988079
+[ 1]PWD -034 Login (Guest) SETUP    from Teach Pendant
+[FRSOCK] recv failed (no pending)! 0x2745 taskid: 150
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]R E S E T
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]R E S E T
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]R E S E T
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SYST-045 TP ON in AUTO mode
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SYST-178 SHIFT-RESET Pressed
+[ 1]R E S E T
+[ 1]SYST-178 SHIFT-RESET Pressed
+[ 1]R E S E T
+[ 1]SYST-178 SHIFT-RESET Pressed
+[ 1]SYST-179 SHIFT-RESET Released
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]MCTL-003 system is in error status
+[ 1]MCTL-003 system is in error status
+[ 1]JOG -010 Jog pressed before shift
+[ 1]INTP-105 (TRIAL, 1) Run request failed
+[ 1]MCTL-003 system is in error status
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 180 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3196 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 8 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 96 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS5:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS3:\VARCHG.XML>
+[ 1]Copy time 3016 
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]R E S E T
+[ 1]SYST-178 SHIFT-RESET Pressed
+[ 1]SYST-179 SHIFT-RESET Released
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 166 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3878 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 5 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 77 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS1:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS9:\VARCHG.XML>
+[ 1]Copy time 2623 
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 178 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3258 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 6 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 82 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS5:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS3:\VARCHG.XML>
+[ 1]Copy time 2504 
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 178 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3180 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 6 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 94 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS7:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS5:\VARCHG.XML>
+[ 1]Copy time 2555 
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 170 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3201 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 7 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 91 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS9:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS7:\VARCHG.XML>
+[ 1]Copy time 2568 
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]R E S E T
+[ 1]SYST-178 SHIFT-RESET Pressed
+[ 1]SYST-179 SHIFT-RESET Released
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -010 Jog pressed before shift
+[ 1]R E S E T
+[ 1]SYST-178 SHIFT-RESET Pressed
+[ 1]SYST-179 SHIFT-RESET Released
+[ 1]JOG -010 Jog pressed before shift
+[ 1]JOG -007 Press shift key to jog
+[ 1]JOG -010 Jog pressed before shift
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]R E S E T
+[ 1]R E S E T
+[ 1]R E S E T
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SRVO-402 DCS Cart. pos. limit(No.1,G1,M0) 11
+[ 1]R E S E T
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 179 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3096 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 7 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 93 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS3:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS1:\VARCHG.XML>
+[ 1]Copy time 2672 
+[ 1]R E S E T
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 180 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3204 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 7 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 87 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS5:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS3:\VARCHG.XML>
+[ 1]Copy time 2685 
+[ 1]R E S E T
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 196 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3135 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 7 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 91 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS7:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS5:\VARCHG.XML>
+[ 1]Copy time 2742 
+[ 1]R E S E T
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 171 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[ 1]spcmd time 3186 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 6 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 89 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS9:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS7:\VARCHG.XML>
+[ 1]Copy time 2686 
+[ 1]R E S E T
+[ 1]SMON> xcopy fr:\*.* virt:\tmpfr\*.*
+[ 1]Created directory VIRT:\TMPFR\PYTHON
+[ 1]Created directory VIRT:\TMPFR\VISION
+[ 1]Created directory VIRT:\TMPFR\VISION\DATA
+[ 1]spcmd time 365 
+[ 1]spcmd completed successfully.
+[ 1]SMON> xcopy fra:\*.* virt:\tmpfra\*.*
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP01
+[ 1]Created directory VIRT:\TMPFRA\_BACKUP_\BACKUP02
+[osppc] Timer sync timeout! tid: 73 cpu: 1
+[ 1]spcmd time 5992 
+[ 1]spcmd completed successfully.
+[ 1]SMON> copy frs:orderfil.dat virt:\tmpback\
+[ 1]Copy time 14 
+[ 1]SMON> copy mdb:*.tp virt:\tmpback\
+[ 1]Copy time 179 
+[ 1]SMON> copy mdb:*.* virt:\tmpback\
+[ 1][vmisavef] appending segment to MDS1:\SYSVARS.SV
+[ 1][RCMPLG] cannot open file <MDS9:\VARCHG.XML>
+[ 1]Copy time 5271 
+[ 1]R E S E T

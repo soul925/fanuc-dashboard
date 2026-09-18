@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FANUC OPC UA Dashboard</title>
-
+    <title>FANUC Industrial Robot Manager</title>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-
 <body>
 
 <div class="container">
@@ -23,87 +25,73 @@
     <aside class="sidebar">
 
         <div class="logo">
-            <div class="logo-icon">
+            <img src="logo.png" alt="FANUC Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('fallbackLogoIcon').style.display='flex';">
+            <div id="fallbackLogoIcon" class="logo-icon" style="display: none;">
                 <i class="fa-solid fa-robot"></i>
             </div>
-
-            <div>
-                <h2>FANUC</h2>
-                <span>OPC UA Dashboard</span>
+            <div class="fanuc-brand-title">
+                <h2 class="fanuc-banner-name">FANUC</h2>
+                <span class="fanuc-brand-subtitle">ROBOT MANAGER</span>
             </div>
         </div>
 
         <nav>
-
             <ul>
-
-                <li class="active" onclick="showPage('dashboard',this)">
-                    <i class="fa-solid fa-chart-line"></i>
-                    Dashboard
-                </li>
-
-                <li onclick="showPage('connection',this)">
-                    <i class="fa-solid fa-plug"></i>
-                    Connection
-                </li>
-
-                <!-- <li onclick="showPage('overview',this)">
+                <li class="active" onclick="showPage('dashboard', this)">
                     <i class="fa-solid fa-gauge-high"></i>
-                    Overview
-                </li> -->
+                    Fleet Dashboard
+                </li>
 
-                <li onclick="showPage('io',this)">
+                <li onclick="showPage('robots', this)">
+                    <i class="fa-solid fa-sliders"></i>
+                    Robot Manager
+                </li>
+
+                <li onclick="showPage('io', this)">
                     <i class="fa-solid fa-microchip"></i>
                     I/O Monitor
                 </li>
 
-                <li onclick="showPage('registers',this)">
+                <li onclick="showPage('registers', this)">
                     <i class="fa-solid fa-table"></i>
                     Register Monitor
                 </li>
 
-                <li onclick="showPage('programs',this)">
+                <li onclick="showPage('programs', this)">
                     <i class="fa-solid fa-code"></i>
                     Program Monitor
                 </li>
 
-                <li onclick="showPage('alarms',this)">
+                <li onclick="showPage('alarms', this)">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     Alarm Monitor
                 </li>
 
-                <li onclick="showPage('browser',this)">
+                <li onclick="showPage('backups', this)">
+                    <i class="fa-solid fa-box-archive"></i>
+                    Backup Manager
+                </li>
+
+                <li onclick="showPage('logs', this)">
+                    <i class="fa-solid fa-terminal"></i>
+                    Application Logs
+                </li>
+
+                <li onclick="showPage('browser', this)">
                     <i class="fa-solid fa-folder-tree"></i>
                     OPC UA Browser
                 </li>
 
-                <li onclick="showPage('read',this)">
+                <li onclick="showPage('read', this)">
                     <i class="fa-solid fa-book-open"></i>
                     Read Node
                 </li>
 
-                <li onclick="showPage('write',this)">
-                    <i class="fa-solid fa-pen"></i>
-                    Write Node
+                <li onclick="showPage('robot', this)">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Robot Details
                 </li>
-
-                <li onclick="showPage('robot',this)">
-                    <i class="fa-solid fa-robot"></i>
-                    Robot Monitor
-                </li>
-
-                <li onclick="showPage('logs',this)">
-                    <i class="fa-solid fa-file-lines"></i>
-                    Logs
-                </li>
-
-                <li onclick="showPage('settings',this)">
-                    <i class="fa-solid fa-gear"></i>
-                    Settings
-                </li>
-
             </ul>
-
         </nav>
 
     </aside>
@@ -114,1123 +102,947 @@
 
     <main class="main">
 
-        <!-- HEADER -->
-
+        <!-- HEADER / TOPBAR -->
         <header class="topbar">
-
-            <div>
-                <h1>FANUC OPC UA Dashboard</h1>
-                <p>Industrial Robot Monitoring System</p>
+            <div class="topbar-branding">
+                <img src="logo.png" alt="FANUC Logo" class="topbar-logo-img" onerror="this.style.display='none';">
+                <div class="topbar-text">
+                    <h1><span class="fanuc-banner-name">FANUC</span> Industrial Robot Manager</h1>
+                    <p>Multi-Robot Telemetry, I/O, Registers &amp; Controller FTP Backup System</p>
+                </div>
             </div>
 
-            <div class="status-box">
-                <span id="statusDot" class="offline"></span>
-                <span id="statusText">Disconnected</span>
-            </div>
+            <div class="topbar-controls">
+                <!-- Global Robot Selector -->
+                <div class="robot-selector-wrapper">
+                    <label for="globalRobotSelector"><i class="fa-solid fa-robot" style="color: var(--fanuc-yellow);"></i> Active Robot:</label>
+                    <select id="globalRobotSelector" onchange="onGlobalRobotChange(this.value)">
+                        <option value="Robot_1">Loading robots...</option>
+                    </select>
+                </div>
 
+                <div class="status-box">
+                    <span id="statusDot" class="offline"></span>
+                    <span id="statusText">Disconnected</span>
+                </div>
+
+                <button id="quickConnectBtn" class="btn-sm btn-primary" onclick="toggleActiveRobotConnection()">
+                    <i class="fa-solid fa-plug"></i> Connect
+                </button>
+
+                <!-- Theme Toggle Button -->
+                <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </header>
 
-<!-- ====================================== -->
-<!-- DASHBOARD -->
-<!-- ====================================== -->
-
-<section id="dashboard" class="page active">
-
-    <div class="page-header">
-
-        <h2>Dashboard</h2>
-
-        <div class="toolbar">
-
-            <button onclick="loadStatus()">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh Dashboard
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="card-grid">
-
-        <div class="card">
-            <h3>Robot Model</h3>
-            <p id="model">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Serial Number</h3>
-            <p id="serial">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Current Program</h3>
-            <p id="program">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Program Speed</h3>
-            <p id="speed">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Robot Mode</h3>
-            <p id="mode">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Servo Status</h3>
-            <p id="servo">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Emergency Stop</h3>
-            <p id="estop">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Protective Stop</h3>
-            <p id="pstop">--</p>
-        </div>
-
-    </div>
-    <div class="card" style="margin-top:20px;">
-
-    <h3>Monitored Signals</h3>
-
-    <div id="dashboardSignals">
-
-        <p>No signals added.</p>
-
-    </div>
-
-    </div>
-</section>
-
-<!-- ====================================== -->
-<!-- CONNECTION -->
-<!-- ====================================== -->
-
-<section id="connection" class="page">
-
-    <h2>Robot Connection</h2>
-
-    <div class="panel">
-
-        <label>Robot ID</label>
-
-        <input
-            id="robotId"
-            type="text"
-            value="Robot_1"
-            placeholder="Robot_1">
-
-        <label>Robot IP Address</label>
-
-        <input
-            id="ip"
-            type="text"
-            value="192.168.4.90"
-            placeholder="192.168.4.90">
-
-        <label>OPC UA Port</label>
-
-        <input
-            id="port"
-            type="number"
-            value="4880">
-
-        <label>OPC UA Endpoint</label>
-
-        <input
-            id="endpoint"
-            type="text"
-            value="/FANUC/NanoUaServer">
-
-        <div class="button-group">
-
-            <button
-                id="connectBtn"
-                onclick="connectRobot()">
-
-                <i class="fa-solid fa-plug-circle-check"></i>
-                Connect
-
-            </button>
-
-            <button onclick="disconnectRobot()">
-
-                <i class="fa-solid fa-plug-circle-xmark"></i>
-                Disconnect
-
-            </button>
-
-        </div>
-
-        <hr>
-
-        <h3>Current Connection</h3>
-
-        <table class="info-table">
-
-            <tr>
-                <td>Robot ID</td>
-                <td id="connRobot">--</td>
-            </tr>
-
-            <tr>
-                <td>Status</td>
-                <td id="connStatus">Disconnected</td>
-            </tr>
-
-            <tr>
-                <td>Endpoint</td>
-                <td id="connEndpoint">--</td>
-            </tr>
-
-            <tr>
-                <td>Session</td>
-                <td id="connSession">Not Connected</td>
-            </tr>
-
-        </table>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- OPC UA BROWSER -->
-<!-- ====================================== -->
-
-<section id="browser" class="page">
-
-    <div class="page-header">
-
-        <h2>OPC UA Browser</h2>
-
-        <div class="toolbar">
-
-            <button onclick="browseNodes()">
-                <i class="fa-solid fa-folder-open"></i>
-                Browse Namespace
-            </button>
-
-            <button onclick="expandAllNodes()">
-                <i class="fa-solid fa-plus"></i>
-                Expand All
-            </button>
-
-            <button onclick="collapseAllNodes()">
-                <i class="fa-solid fa-minus"></i>
-                Collapse All
-            </button>
-
-            <button onclick="refreshBrowser()">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="browser-layout">
-
-        <!-- ============================= -->
-        <!-- Namespace Tree -->
-        <!-- ============================= -->
-
-        <div class="tree-panel">
-
-            <div class="panel-title">
-                Namespace Tree
+        <!-- SCROLLABLE CONTENT VIEWPORT -->
+        <div class="content-viewport">
+
+            <!-- ====================================== -->
+            <!-- MULTI-ROBOT FLEET DASHBOARD -->
+            <!-- ====================================== -->
+
+            <section id="dashboard" class="page active">
+
+            <div class="page-header">
+                <h2>Multi-Robot Fleet Overview</h2>
+                <div class="toolbar">
+                    <button class="btn-primary" onclick="showPage('robots')">
+                        <i class="fa-solid fa-plus"></i> Add New Robot
+                    </button>
+                    <button onclick="loadAllRobotsSummary()">
+                        <i class="fa-solid fa-rotate"></i> Refresh Fleet
+                    </button>
+                </div>
             </div>
 
-            <input
-                id="nodeSearch"
-                type="text"
-                placeholder="Search Node..."
-                onkeyup="searchNodes()">
-
-            <div id="nodeTree" class="tree">
-
-                <p class="placeholder">
-                    Browse the OPC UA namespace to display nodes.
-                </p>
-
+            <!-- Fleet Metrics Bar -->
+            <div class="cards-grid" style="margin-bottom: 24px;">
+                <div class="card stat-card">
+                    <span class="stat-label">Total Configured Robots</span>
+                    <span id="statTotalRobots" class="stat-value">--</span>
+                </div>
+                <div class="card stat-card">
+                    <span class="stat-label">Online / Connected</span>
+                    <span id="statConnectedRobots" class="stat-value" style="color: var(--status-success);">--</span>
+                </div>
+                <div class="card stat-card">
+                    <span class="stat-label">Active Fleet Alarms</span>
+                    <span id="statAlarmsActive" class="stat-value" style="color: var(--fanuc-red);">--</span>
+                </div>
+                <div class="card stat-card">
+                    <span class="stat-label">Active Monitoring Context</span>
+                    <span id="activeRobotTitle" class="stat-value" style="font-size: 16px; color: var(--fanuc-yellow);">Robot_1</span>
+                </div>
             </div>
 
-        </div>
-
-        <!-- ============================= -->
-        <!-- Node Information -->
-        <!-- ============================= -->
-
-        <div class="details-panel">
-
-            <div class="panel-title">
-                Node Information
+            <!-- Multi-Robot Cards Grid -->
+            <div id="multiRobotGrid" class="multi-robot-grid">
+                <!-- Dynamically populated -->
             </div>
 
-            <table class="info-table">
+        </section>
 
-                <tr>
-                    <td>Node ID</td>
-                    <td id="selectedNodeId">--</td>
-                </tr>
+        <!-- ====================================== -->
+        <!-- ROBOT MANAGER PAGE -->
+        <!-- ====================================== -->
 
-                <tr>
-                    <td>Browse Name</td>
-                    <td id="selectedBrowseName">--</td>
-                </tr>
+        <section id="robots" class="page">
 
-                <tr>
-                    <td>Display Name</td>
-                    <td id="selectedDisplayName">--</td>
-                </tr>
-
-                <tr>
-                    <td>Node Class</td>
-                    <td id="selectedNodeClass">--</td>
-                </tr>
-
-                <tr>
-                    <td>Data Type</td>
-                    <td id="selectedDatatype">--</td>
-                </tr>
-
-                <tr>
-                    <td>Access Level</td>
-                    <td id="selectedAccess">--</td>
-                </tr>
-
-                <tr>
-                    <td>Current Value</td>
-                    <td id="selectedValue">--</td>
-                </tr>
-
-            </table>
-
-            <hr>
-
-            <h3>Monitor Signal</h3>
-
-            <label>Custom Name</label>
-
-            <input
-                type="text"
-                id="signalName"
-                placeholder="Example: Vacuum Sensor">
-
-            <div class="button-group">
-
-                <button onclick="addSignal()">
-                    <i class="fa-solid fa-plus"></i>
-                    Add To Dashboard
-                </button>
-
-                <button onclick="clearSignalSelection()">
-                    <i class="fa-solid fa-trash"></i>
-                    Clear
-                </button>
-
+            <div class="page-header">
+                <h2>FANUC Robot Configuration Manager</h2>
+                <div class="toolbar">
+                    <button class="btn-primary" onclick="showAddRobotModal()">
+                        <i class="fa-solid fa-plus"></i> Add New Robot
+                    </button>
+                    <button onclick="loadRobotManagerTable()">
+                        <i class="fa-solid fa-rotate"></i> Refresh List
+                    </button>
+                </div>
             </div>
-
-            <hr>
-
-            <h3>Selected Signals</h3>
-
-            <div id="selectedSignals" class="io-grid">
-
-                <p>No signals selected.</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ====================================== -->
-<!-- READ NODE -->
-<!-- ====================================== -->
-
-<section id="read" class="page">
-
-    <h2>Read OPC UA Node</h2>
-
-    <div class="panel">
-
-        <label>Node ID</label>
-
-        <input
-            id="readNodeId"
-            type="text"
-            placeholder="Enter Node ID">
-
-        <div class="button-group">
-
-            <button onclick="readNode()">
-                <i class="fa-solid fa-book-open"></i>
-                Read
-            </button>
-
-            <button onclick="clearReadBox()">
-                <i class="fa-solid fa-trash"></i>
-                Clear
-            </button>
-
-        </div>
-
-        <label>Value</label>
-
-        <textarea
-            id="readValue"
-            rows="12"
-            readonly
-            placeholder="Value will appear here..."></textarea>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- WRITE NODE -->
-<!-- ====================================== -->
-
-<section id="write" class="page">
-
-    <h2>Write OPC UA Node</h2>
-
-    <div class="panel">
-
-        <label>Node ID</label>
-
-        <input
-            id="writeNodeId"
-            type="text"
-            placeholder="Enter Node ID">
-
-        <label>Data Type</label>
-
-        <select id="dataType">
-
-            <option value="Boolean">Boolean</option>
-            <option value="SByte">SByte</option>
-            <option value="Byte">Byte</option>
-            <option value="Int16">Int16</option>
-            <option value="UInt16">UInt16</option>
-            <option value="Int32">Int32</option>
-            <option value="UInt32">UInt32</option>
-            <option value="Float">Float</option>
-            <option value="Double">Double</option>
-            <option value="String">String</option>
-
-        </select>
-
-        <label>Value</label>
-
-        <input
-            id="writeValue"
-            type="text"
-            placeholder="Enter value">
-
-        <div class="button-group">
-
-            <button onclick="writeNode()">
-                <i class="fa-solid fa-pen"></i>
-                Write Value
-            </button>
-
-            <button onclick="clearWriteBox()">
-                <i class="fa-solid fa-eraser"></i>
-                Clear
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- ROBOT MONITOR -->
-<!-- ====================================== -->
-
-<section id="robot" class="page">
-
-    <div class="page-header">
-
-        <h2>Robot Monitor</h2>
-
-        <div class="toolbar">
-
-            <button onclick="loadStatus()">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="robot-grid">
-
-        <!-- General Information -->
-
-        <div class="card">
-
-            <h3>General Information</h3>
-
-            <table class="info-table">
-
-                <tr>
-                    <td>Model</td>
-                    <td id="mModel">--</td>
-                </tr>
-
-                <tr>
-                    <td>Serial Number</td>
-                    <td id="mSerial">--</td>
-                </tr>
-
-                <tr>
-                    <td>Program</td>
-                    <td id="mProgram">--</td>
-                </tr>
-
-                <tr>
-                    <td>Mode</td>
-                    <td id="mMode">--</td>
-                </tr>
-
-                <tr>
-                    <td>Servo Status</td>
-                    <td id="mServo">--</td>
-                </tr>
-
-                <tr>
-                    <td>Operation State</td>
-                    <td id="mOperation">--</td>
-                </tr>
-
-                <tr>
-                    <td>Emergency Stop</td>
-                    <td id="mEstop">--</td>
-                </tr>
-
-                <tr>
-                    <td>Protective Stop</td>
-                    <td id="mPstop">--</td>
-                </tr>
-
-                <tr>
-                    <td>Program Speed</td>
-                    <td id="mSpeed">--</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-        <!-- Connection Information -->
-
-        <div class="card">
-
-            <h3>Connection Information</h3>
-
-            <table class="info-table">
-
-                <tr>
-                    <td>Status</td>
-                    <td id="robotStatus">Disconnected</td>
-                </tr>
-
-                <tr>
-                    <td>Robot ID</td>
-                    <td id="robotIdDisplay">--</td>
-                </tr>
-
-                <tr>
-                    <td>Endpoint</td>
-                    <td id="robotEndpoint">--</td>
-                </tr>
-
-                <tr>
-                    <td>Polling Rate</td>
-                    <td id="currentPollRate">1000 ms</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- OVERVIEW -->
-<!-- ====================================== -->
-<!-- 
-<section id="overview" class="page">
-
-    <div class="page-header">
-
-        <h2>Overview</h2>
-
-        <div class="toolbar">
-
-            <button onclick="loadOverview()">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="card-grid">
-
-        <div class="card">
-            <h3>Robot Model</h3>
-            <p id="ovModel">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Serial Number</h3>
-            <p id="ovSerial">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Software Version</h3>
-            <p id="ovVersion">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Manufacturer</h3>
-            <p id="ovManufacturer">FANUC</p>
-        </div>
-
-        <div class="card">
-            <h3>Robot Mode</h3>
-            <p id="ovMode">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Operation State</h3>
-            <p id="ovOperation">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Servo State</h3>
-            <p id="ovServo">--</p>
-        </div>
-
-        <div class="card">
-            <h3>Alarm Status</h3>
-            <p id="ovAlarm">No Alarm</p>
-        </div>
-
-    </div>
-
-</section> -->
-<!-- ====================================== -->
-<!-- I/O MONITOR -->
-<!-- ====================================== -->
-
-<section id="io" class="page">
-
-    <div class="page-header">
-
-        <h2>I/O Monitor</h2>
-
-        <div class="toolbar">
-
-            <button onclick="showPage('browser')">
-                <i class="fa-solid fa-plus"></i>
-                Add Signal
-            </button>
-
-            <button onclick="loadIO()">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="panel">
-
-        <div class="io-layout">
 
             <div class="card">
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 140px;">Robot ID</th>
+                                <th>Friendly Name</th>
+                                <th style="width: 180px;">IP Address</th>
+                                <th style="width: 110px;">OPC UA Port</th>
+                                <th style="width: 100px;">FTP Port</th>
+                                <th style="width: 130px;">Status</th>
+                                <th style="width: 220px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="robotManagerTableBody">
+                            <tr>
+                                <td colspan="7" class="empty-state">Loading robot configurations...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-                <h3>Digital Inputs</h3>
+        </section>
 
-                <div id="digitalInputs" class="io-grid">
+        <!-- ====================================== -->
+        <!-- I/O MONITOR (DI & DO ONLY - 1-BASED) -->
+        <!-- ====================================== -->
 
-                    Loading...
+        <section id="io" class="page">
+
+            <div class="page-header">
+                <div>
+                    <h2>Digital I/O Monitor</h2>
+                    <span class="badge-pill" id="activeRobotEndpointBadge">opc.tcp://127.0.0.1:4880</span>
+                </div>
+                <div class="toolbar">
+                    <button onclick="loadIO()"><i class="fa-solid fa-rotate"></i> Refresh I/O</button>
+                </div>
+            </div>
+
+            <!-- Digital Inputs (DI) Section -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="io-section-header">
+                    <div>
+                        <h3><i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--fanuc-yellow);"></i> Digital Inputs (DI)</h3>
+                        <span class="val-pill" id="diRangeBadge">Configured Points: 0</span>
+                    </div>
+
+                    <div class="range-controls">
+                        <input type="text" id="diRangeInput" placeholder="Range e.g. 1-100 or 1-16,20" class="range-input">
+                        <input type="text" id="diNamePrefix" placeholder="Prefix (DI)" class="prefix-input" value="DI">
+                        <button class="btn-sm btn-primary" onclick="addDIRange()"><i class="fa-solid fa-plus"></i> Add Range</button>
+                        <button class="btn-sm btn-danger" onclick="clearAllDI()"><i class="fa-solid fa-trash"></i> Clear</button>
+                    </div>
+                </div>
+
+                <div class="range-tags-container" id="diRangesList"></div>
+
+                <div id="diTableContainer" class="table-responsive">
+                    <p class="empty-state">Loading Digital Inputs...</p>
+                </div>
+            </div>
+
+            <!-- Digital Outputs (DO) Section -->
+            <div class="card">
+                <div class="io-section-header">
+                    <div>
+                        <h3><i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--industrial-blue);"></i> Digital Outputs (DO)</h3>
+                        <span class="val-pill" id="doRangeBadge">Configured Points: 0</span>
+                    </div>
+
+                    <div class="range-controls">
+                        <input type="text" id="doRangeInput" placeholder="Range e.g. 1-50 or 1-16" class="range-input">
+                        <input type="text" id="doNamePrefix" placeholder="Prefix (DO)" class="prefix-input" value="DO">
+                        <button class="btn-sm btn-primary" onclick="addDORange()"><i class="fa-solid fa-plus"></i> Add Range</button>
+                        <button class="btn-sm btn-danger" onclick="clearAllDO()"><i class="fa-solid fa-trash"></i> Clear</button>
+                    </div>
+                </div>
+
+                <div class="range-tags-container" id="doRangesList"></div>
+
+                <div id="doTableContainer" class="table-responsive">
+                    <p class="empty-state">Loading Digital Outputs...</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- REGISTER MONITOR (IR & DR - 1-BASED) -->
+        <!-- ====================================== -->
+
+        <section id="registers" class="page">
+
+            <div class="page-header">
+                <div>
+                    <h2>FANUC Register Monitor</h2>
+                    <span class="badge-pill">Integer Registers (IR) &amp; Data Registers (DR)</span>
+                </div>
+                <div class="toolbar">
+                    <button onclick="loadIO()"><i class="fa-solid fa-rotate"></i> Refresh Registers</button>
+                </div>
+            </div>
+
+            <!-- Integer Registers (IR) Section -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="io-section-header">
+                    <div>
+                        <h3><i class="fa-solid fa-hashtag" style="color: var(--fanuc-yellow);"></i> Integer Registers (IR)</h3>
+                        <span class="val-pill" id="irRangeBadge">Configured Registers: 0</span>
+                    </div>
+
+                    <div class="range-controls">
+                        <input type="text" id="irRangeInput" placeholder="Range e.g. 1-100 or 1-50" class="range-input">
+                        <input type="text" id="irNamePrefix" placeholder="Prefix (IR)" class="prefix-input" value="IR">
+                        <button class="btn-sm btn-primary" onclick="addIRRange()"><i class="fa-solid fa-plus"></i> Add Range</button>
+                        <button class="btn-sm btn-danger" onclick="clearAllIR()"><i class="fa-solid fa-trash"></i> Clear</button>
+                    </div>
+                </div>
+
+                <div class="range-tags-container" id="irRangesList"></div>
+
+                <div id="irTableContainer" class="table-responsive">
+                    <p class="empty-state">Loading Integer Registers...</p>
+                </div>
+            </div>
+
+            <!-- Data Registers (DR) Section -->
+            <div class="card">
+                <div class="io-section-header">
+                    <div>
+                        <h3><i class="fa-solid fa-database" style="color: var(--industrial-blue);"></i> Data Registers (DR)</h3>
+                        <span class="val-pill" id="drRangeBadge">Configured Registers: 0</span>
+                    </div>
+
+                    <div class="range-controls">
+                        <input type="text" id="drRangeInput" placeholder="Range e.g. 1-100 or 1-20,25" class="range-input">
+                        <input type="text" id="drNamePrefix" placeholder="Prefix (DR)" class="prefix-input" value="DR">
+                        <button class="btn-sm btn-primary" onclick="addDRRange()"><i class="fa-solid fa-plus"></i> Add Range</button>
+                        <button class="btn-sm btn-danger" onclick="clearAllDR()"><i class="fa-solid fa-trash"></i> Clear</button>
+                    </div>
+                </div>
+
+                <!-- Custom Direct DR Write Box -->
+                <div class="sub-card" style="margin-bottom: 16px;">
+                    <h4 style="margin: 0 0 10px 0; font-size: 13px; color: var(--text-secondary); text-transform: uppercase;">
+                        <i class="fa-solid fa-pen-to-square" style="color: var(--fanuc-yellow);"></i> Direct Data Register Write (1-Based)
+                    </h4>
+                    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <label style="font-size: 13px; font-weight: 600;">DR[</label>
+                            <input type="number" id="writeDrIndex" min="1" max="1000" placeholder="Index (1-1000)" style="width: 120px; padding: 6px 10px; border-radius: 6px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-color);">
+                            <label style="font-size: 13px; font-weight: 600;">] =</label>
+                        </div>
+                        <input type="number" id="writeDrValue" step="any" placeholder="Numeric Value" style="width: 140px; padding: 6px 10px; border-radius: 6px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-color);">
+                        <button class="btn-sm btn-primary" onclick="writeCustomDRDirect()"><i class="fa-solid fa-check"></i> Write Register</button>
+                    </div>
+                </div>
+
+                <div class="range-tags-container" id="drRangesList"></div>
+
+                <div id="drTableContainer" class="table-responsive">
+                    <p class="empty-state">Loading Data Registers...</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- PROGRAM MONITOR -->
+        <!-- ====================================== -->
+
+        <section id="programs" class="page">
+
+            <div class="page-header">
+                <h2>Program Telemetry Monitor</h2>
+                <div class="toolbar">
+                    <button onclick="loadPrograms()"><i class="fa-solid fa-rotate"></i> Refresh Program</button>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Current Program</h3>
+                    <p id="progName">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Program Speed</h3>
+                    <p id="progSpeed">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Robot Mode</h3>
+                    <p id="progMode">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Program Status</h3>
+                    <p id="progStatus">--</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>Program Execution Details</h3>
+                <table class="custom-table">
+                    <tbody>
+                        <tr>
+                            <td style="width: 240px;"><b>Loaded Program Name</b></td>
+                            <td id="pmProg">--</td>
+                        </tr>
+                        <tr>
+                            <td><b>Program Speed / Override</b></td>
+                            <td id="pmSpeed">--</td>
+                        </tr>
+                        <tr>
+                            <td><b>Robot Mode (ModeState)</b></td>
+                            <td id="pmMode">--</td>
+                        </tr>
+                        <tr>
+                            <td><b>Program Execution Status</b></td>
+                            <td id="pmStatus">--</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- ALARM MONITOR (ACTIVE & PERSISTENT HISTORY) -->
+        <!-- ====================================== -->
+
+        <section id="alarms" class="page">
+
+            <div class="page-header">
+                <h2>Alarm Monitor &amp; History</h2>
+                <div class="toolbar">
+                    <button onclick="loadAlarms()">
+                        <i class="fa-solid fa-rotate"></i> Refresh Alarms
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Alarms Card -->
+            <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--fanuc-red);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3><i class="fa-solid fa-triangle-exclamation" style="color: var(--fanuc-red);"></i> Active Alarms (<span id="activeAlarmsRobotTitle">Robot_1</span>)</h3>
+                    <span id="alarmStatusBadge" class="badge-na">Checking...</span>
+                </div>
+
+                <div id="activeAlarmsContainer" class="table-responsive">
+                    <p id="alarmDescription" class="empty-state">No Active Alarms detected.</p>
+                </div>
+            </div>
+
+            <!-- Persistent Alarm History Card -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+                    <h3><i class="fa-solid fa-clock-rotate-left" style="color: var(--fanuc-yellow);"></i> Persistent Alarm History (SQLite)</h3>
+                    
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                        <!-- Multi-Robot Filter -->
+                        <select id="alarmRobotFilter" onchange="loadAlarms()" style="padding: 5px 8px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 12px;">
+                            <option value="all">All Robots</option>
+                        </select>
+
+                        <!-- Search Input -->
+                        <input type="text" id="alarmSearchInput" placeholder="Search code/text..." onkeyup="filterAlarmsDebounced()" style="padding: 5px 10px; font-size: 12px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); width: 140px;">
+                        
+                        <!-- Status Filter -->
+                        <select id="alarmStatusFilter" onchange="loadAlarms()" style="padding: 5px 8px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 12px;">
+                            <option value="all">All Statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+
+                        <!-- Limit Selector -->
+                        <select id="alarmLimitSelect" onchange="loadAlarms()" style="padding: 5px 8px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 12px;">
+                            <option value="50">Latest 50</option>
+                            <option value="100" selected>Latest 100</option>
+                            <option value="500">Latest 500</option>
+                            <option value="all">All</option>
+                        </select>
+
+                        <button class="btn-sm" onclick="exportAlarmHistoryCsv()" title="Export History as CSV">
+                            <i class="fa-solid fa-file-csv"></i> Export CSV
+                        </button>
+
+                        <button class="btn-sm btn-danger" onclick="clearAlarmHistory()" title="Permanently Clear History">
+                            <i class="fa-solid fa-trash"></i> Clear
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive" style="max-height: 480px; overflow-y: auto;">
+                    <table class="custom-table">
+                        <thead style="position: sticky; top: 0; background: var(--bg-surface); z-index: 2;">
+                            <tr>
+                                <th style="width: 170px;">First Seen (Timestamp)</th>
+                                <th style="width: 170px;">Resolved At</th>
+                                <th style="width: 120px;">Robot</th>
+                                <th style="width: 130px;">Alarm Code</th>
+                                <th>Description</th>
+                                <th style="width: 100px;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alarmHistory">
+                            <tr>
+                                <td colspan="6" class="empty-state">Loading alarm records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- BACKUP MANAGER (FTP CONTROLLER BACKUP) -->
+        <!-- ====================================== -->
+
+        <section id="backups" class="page">
+
+            <div class="page-header">
+                <h2>FANUC Controller Backup Manager</h2>
+                <div class="toolbar">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <label for="backupTargetRobotSelect" style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">Target:</label>
+                        <select id="backupTargetRobotSelect" style="padding: 5px 8px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 12px;">
+                            <option value="active">Active Robot</option>
+                        </select>
+                    </div>
+                    <button class="btn-info" onclick="runFtpConnectionTest()" title="Test TCP, Authentication, MDB: access & File discovery">
+                        <i class="fa-solid fa-satellite-dish"></i> Test FTP Connection
+                    </button>
+                    <button class="btn-primary" onclick="triggerSelectedRobotBackup()">
+                        <i class="fa-solid fa-download"></i> Backup Selected Robot
+                    </button>
+                    <button class="btn-warn" onclick="triggerBackupAllRobots()">
+                        <i class="fa-solid fa-boxes-stacked"></i> Backup All Robots
+                    </button>
+                    <button onclick="loadBackupsList()">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Diagnostics & Protocol Callout -->
+            <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--fanuc-yellow);">
+                <div style="display: flex; gap: 14px; align-items: flex-start;">
+                    <i class="fa-solid fa-network-wired" style="color: var(--fanuc-yellow); font-size: 22px; margin-top: 2px;"></i>
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0 0 4px 0; color: var(--text-primary); font-size: 14px;">Real FANUC Controller FTP Application Backup (<code>MDB:*.*</code>)</h4>
+                        <p style="margin: 0 0 8px 0; color: var(--text-secondary); font-size: 12px; line-height: 1.5;">
+                            Connects directly to the controller FTP server (Port 21) targeting <code>MDB:</code> (Memory Disk Backup). Retrieves controller programs (<code>.TP</code>, <code>.LS</code>), system variables (<code>.SV</code>, <code>.VR</code>, <code>.DAT</code>), Karel binaries (<code>.KL</code>), and error logs (<code>.DG</code>), strictly validating file count &gt; 0 before generating the download ZIP.
+                        </p>
+                        <div id="backupDiagnosticsInfo" style="display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--text-muted);">
+                            <span><b>Controller IP:</b> <code id="diagRobotIp">--</code></span>
+                            <span><b>OPC UA Endpoint:</b> <code id="diagOpcua">--</code></span>
+                            <span><b>FTP Endpoint:</b> <code id="diagFtp">--</code></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FTP Connection Diagnostics Results Card -->
+            <div id="ftpTestResultsCard" class="card" style="margin-bottom: 16px; display: none; border-left: 4px solid var(--industrial-blue);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h4 style="margin: 0; font-size: 13px; color: var(--text-primary);"><i class="fa-solid fa-satellite-dish" style="color: var(--industrial-blue);"></i> FTP Diagnostics: <span id="ftpTestRobotTitle">--</span></h4>
+                    <span id="ftpTestStatusBadge" class="val-pill" style="font-size: 11px;">Testing...</span>
+                </div>
+                <div id="ftpTestStagesList" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 10px;">
+                    <!-- Populated dynamically -->
+                </div>
+                <p id="ftpTestSummaryMessage" style="margin: 0; font-size: 12px; color: var(--text-secondary); line-height: 1.4;"></p>
+            </div>
+
+            <!-- Real-time Progress Log Console & Diagnostic Dashboard -->
+            <div class="card" id="backupConsoleCard" style="margin-bottom: 20px; display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h4 style="margin: 0; font-size: 14px; color: var(--fanuc-yellow);">
+                        <i class="fa-solid fa-terminal"></i> Backup Execution Console &amp; Verification Diagnostics
+                    </h4>
+                    <span id="backupProgressBadge" class="val-pill" style="font-size: 11px;">In Progress...</span>
+                </div>
+
+                <!-- Structured Diagnostic Summary Grid -->
+                <div id="backupDiagnosticGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 12px;">
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">FTP Connected</span>
+                        <div id="diagFtpConnected" class="kpi-value" style="font-size: 13px;">--</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">Authentication</span>
+                        <div id="diagAuthStatus" class="kpi-value" style="font-size: 13px;">--</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">MDB: Access</span>
+                        <div id="diagMdbStatus" class="kpi-value" style="font-size: 13px;">--</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">Files Found</span>
+                        <div id="diagFilesFound" class="kpi-value" style="font-size: 14px; color: var(--text-primary);">0</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">Files Downloaded</span>
+                        <div id="diagFilesDownloaded" class="kpi-value" style="font-size: 14px; color: var(--status-success);">0</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">Files Failed</span>
+                        <div id="diagFilesFailed" class="kpi-value" style="font-size: 14px; color: var(--text-muted);">0</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">Total Size</span>
+                        <div id="diagTotalSize" class="kpi-value" style="font-size: 14px; color: var(--industrial-blue);">0 MB</div>
+                    </div>
+                    <div class="kpi-card" style="padding: 8px 12px;">
+                        <span class="kpi-label">ZIP Verified</span>
+                        <div id="diagZipVerified" class="kpi-value" style="font-size: 13px;">--</div>
+                    </div>
+                </div>
+
+                <!-- Expandable Downloaded Files List -->
+                <details id="backupDetailsAccordion" style="margin-bottom: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px 12px;">
+                    <summary style="font-size: 12px; font-weight: 700; color: var(--text-secondary); cursor: pointer;">
+                        <i class="fa-solid fa-list-check" style="color: var(--industrial-blue);"></i> View Downloaded File Inventory (<span id="diagFileListCount">0</span> files)
+                    </summary>
+                    <div id="diagDownloadedFilesList" style="max-height: 180px; overflow-y: auto; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-primary); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4px;">
+                        <!-- Dynamically filled -->
+                    </div>
+                </details>
+
+                <textarea id="backupConsoleLog" readonly style="width: 100%; height: 110px; background: #0B0E14; color: #00E676; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); resize: none;"></textarea>
+            </div>
+
+            <!-- Stored Backup Archives Table -->
+            <div class="card" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                    <h3><i class="fa-solid fa-file-zipper" style="color: var(--fanuc-yellow);"></i> Stored Local Backup Archives (<code>Backups/</code>)</h3>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 140px;">Robot ID</th>
+                                <th>Archive Filename</th>
+                                <th style="width: 120px;">Size</th>
+                                <th style="width: 220px;">Creation Date</th>
+                                <th style="width: 180px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="backupListTableBody">
+                            <tr>
+                                <td colspan="5" class="empty-state">No local backup archives created yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Persistent Backup Execution History Table -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                    <h3><i class="fa-solid fa-clock-rotate-left" style="color: var(--industrial-blue);"></i> Persistent Backup Execution History (SQLite)</h3>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 170px;">Timestamp</th>
+                                <th style="width: 120px;">Robot</th>
+                                <th style="width: 150px;">Backup Type</th>
+                                <th style="width: 90px;">Found</th>
+                                <th style="width: 90px;">Downloaded</th>
+                                <th style="width: 90px;">Failed</th>
+                                <th style="width: 100px;">Size</th>
+                                <th style="width: 120px;">Verified Status</th>
+                                <th>Archive Filename / Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="backupHistoryTableBody">
+                            <tr>
+                                <td colspan="9" class="empty-state">Loading backup history...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- APPLICATION LOGS PAGE -->
+        <!-- ====================================== -->
+
+        <section id="logs" class="page">
+
+            <div class="page-header">
+                <h2>Application &amp; Controller Logs</h2>
+                <div class="toolbar">
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                        <select id="logRobotFilter" onchange="loadAppLogs()" style="padding: 5px 8px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 12px;">
+                            <option value="all">All Robots</option>
+                        </select>
+
+                        <select id="logLevelFilter" onchange="loadAppLogs()" style="padding: 5px 8px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 12px;">
+                            <option value="all">All Levels</option>
+                            <option value="INFO">INFO</option>
+                            <option value="WARN">WARN</option>
+                            <option value="ERROR">ERROR</option>
+                        </select>
+
+                        <input type="text" id="logSearchInput" placeholder="Search logs..." onkeyup="filterLogsDebounced()" style="padding: 5px 10px; font-size: 12px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); width: 150px;">
+
+                        <button onclick="loadAppLogs()"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                        <button class="btn-sm" onclick="exportLogsCsv()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+                        <button class="btn-sm btn-danger" onclick="clearAppLogs()"><i class="fa-solid fa-trash"></i> Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="table-responsive" style="max-height: 600px; overflow-y: auto;">
+                    <table class="custom-table">
+                        <thead style="position: sticky; top: 0; background: var(--bg-surface); z-index: 2;">
+                            <tr>
+                                <th style="width: 180px;">Timestamp</th>
+                                <th style="width: 110px;">Robot</th>
+                                <th style="width: 90px;">Level</th>
+                                <th style="width: 110px;">Module</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appLogsTableBody">
+                            <tr>
+                                <td colspan="5" class="empty-state">Loading application logs...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- OPC UA BROWSER & NAMESPACE NAVIGATOR -->
+        <!-- ====================================== -->
+
+        <section id="browser" class="page">
+
+            <div class="page-header">
+                <div>
+                    <h2><i class="fa-solid fa-folder-tree" style="color: var(--fanuc-yellow);"></i> OPC UA Namespace Browser</h2>
+                    <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+                        Active Target Robot: <strong id="browserActiveRobotName" style="color: var(--fanuc-yellow);">--</strong>
+                    </p>
+                </div>
+                <div class="toolbar">
+                    <button class="btn-primary" onclick="browseNamespaceRoot()"><i class="fa-solid fa-sitemap"></i> Browse Root</button>
+                    <button onclick="expandAllNodes()"><i class="fa-solid fa-plus"></i> Expand All</button>
+                    <button onclick="collapseAllNodes()"><i class="fa-solid fa-minus"></i> Collapse All</button>
+                    <button onclick="refreshBrowser()"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                </div>
+            </div>
+
+            <!-- Navigation Breadcrumb & History Toolbar -->
+            <div class="card" style="padding: 10px 14px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <button id="browserBackBtn" class="btn-sm" onclick="browserGoBack()" title="Go Back" disabled>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button id="browserForwardBtn" class="btn-sm" onclick="browserGoForward()" title="Go Forward" disabled>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button id="browserUpBtn" class="btn-sm" onclick="browserGoUp()" title="Go to Parent Folder">
+                        <i class="fa-solid fa-arrow-up"></i> Up
+                    </button>
+                    <button id="browserRefreshCurrentBtn" class="btn-sm" onclick="refreshCurrentNodeBrowse()" title="Reload Current Node">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 250px;">
+                    <span style="font-size: 12px; font-weight: 700; color: var(--text-secondary); white-space: nowrap;"><i class="fa-solid fa-location-dot" style="color: var(--industrial-blue);"></i> Node:</span>
+                    <input id="browserCurrentNodeInput" type="text" value="ObjectsFolder" style="flex: 1; padding: 5px 10px; font-size: 12px; font-family: 'JetBrains Mono', monospace; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 4px;" onkeydown="if(event.key==='Enter') navigateToNodeId(this.value)">
+                    <button class="btn-sm btn-primary" onclick="navigateToNodeId(document.getElementById('browserCurrentNodeInput').value)"><i class="fa-solid fa-arrow-right-to-bracket"></i> Go</button>
+                </div>
+
+                <div id="browserCurrentStatusBadge" class="val-pill badge-resolved" style="font-size: 11px;">
+                    Ready
+                </div>
+            </div>
+
+            <!-- Main Browser Layout (2-Column Grid) -->
+            <div class="browser-grid-layout">
+                
+                <!-- Left Panel: Namespace Tree -->
+                <div class="card tree-container-card">
+                    <div class="panel-header-bar">
+                        <h4><i class="fa-solid fa-folder-tree" style="color: var(--fanuc-yellow);"></i> Namespace Hierarchy</h4>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <input id="nodeSearch" type="text" placeholder="Search tree nodes..." onkeyup="searchNodes()" style="width: 100%; padding: 6px 10px; font-size: 12px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 4px;">
+                    </div>
+                    <div id="nodeTree" class="tree-scroll-container">
+                        <p class="placeholder" style="padding: 16px; font-size: 12px; color: var(--text-muted); font-style: italic;">
+                            Click "Browse Root" to discover the OPC UA namespace.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Panels: Children Navigator & Selected Node Details -->
+                <div class="browser-content-column">
+                    
+                    <!-- Children Navigator Panel -->
+                    <div class="card children-navigator-card">
+                        <div class="panel-header-bar" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4>
+                                <i class="fa-solid fa-folder-open" style="color: var(--industrial-blue);"></i>
+                                Child Nodes: <span id="navPanelCurrentTitle" style="color: var(--fanuc-yellow); font-family: 'JetBrains Mono', monospace;">ObjectsFolder</span>
+                            </h4>
+                            <span id="navPanelCountBadge" class="val-pill" style="font-size: 11px;">0 Children</span>
+                        </div>
+
+                        <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+                            <table class="custom-table" id="childrenNavTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px;">Type</th>
+                                        <th>Display Name</th>
+                                        <th>Browse Name</th>
+                                        <th>Node ID</th>
+                                        <th>Class</th>
+                                        <th>Data Type</th>
+                                        <th>Current Value</th>
+                                        <th style="width: 90px; text-align: center;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="childrenNavTableBody">
+                                    <tr>
+                                        <td colspan="8" class="empty-state">No child nodes loaded. Click "Browse Root" or select a node from the hierarchy tree.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Node Property Inspector -->
+                    <div class="card node-inspector-card">
+                        <div class="panel-header-bar" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4><i class="fa-solid fa-circle-info" style="color: var(--fanuc-yellow);"></i> Selected Node Information</h4>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn-sm" onclick="sendSelectedNodeToRead()"><i class="fa-solid fa-book-open"></i> Read in Tool</button>
+                                <button class="btn-sm btn-primary" onclick="copySelectedNodeId()"><i class="fa-solid fa-copy"></i> Copy Node ID</button>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 10px;">
+                            <table class="custom-table" style="background: transparent;">
+                                <tr><td style="width: 120px; font-weight: 700; color: var(--text-secondary);">Node ID</td><td id="selectedNodeId" style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--fanuc-yellow);">--</td></tr>
+                                <tr><td style="font-weight: 700; color: var(--text-secondary);">Display Name</td><td id="selectedDisplayName">--</td></tr>
+                                <tr><td style="font-weight: 700; color: var(--text-secondary);">Browse Name</td><td id="selectedBrowseName">--</td></tr>
+                                <tr><td style="font-weight: 700; color: var(--text-secondary);">Description</td><td id="selectedDescription">--</td></tr>
+                            </table>
+
+                            <table class="custom-table" style="background: transparent;">
+                                <tr><td style="width: 120px; font-weight: 700; color: var(--text-secondary);">Node Class</td><td id="selectedNodeClass">--</td></tr>
+                                <tr><td style="font-weight: 700; color: var(--text-secondary);">Data Type</td><td id="selectedDatatype">--</td></tr>
+                                <tr><td style="font-weight: 700; color: var(--text-secondary);">Access Level</td><td id="selectedAccess">--</td></tr>
+                                <tr><td style="font-weight: 700; color: var(--text-secondary);">Status Code</td><td id="selectedStatusCode">--</td></tr>
+                            </table>
+                        </div>
+
+                        <div style="margin-top: 12px; background: var(--bg-card-alt); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 10px 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary);">Live Value:</span>
+                                <span id="selectedValueTimestamp" style="font-size: 10px; color: var(--text-muted);">--</span>
+                            </div>
+                            <div id="selectedValue" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--status-success); word-break: break-all;">
+                                --
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>
 
-            <div class="card">
+        </section>
 
-                <h3>Digital Outputs</h3>
+        <!-- ====================================== -->
+        <!-- READ NODE -->
+        <!-- ====================================== -->
 
-                <div id="digitalOutputs" class="io-grid">
+        <section id="read" class="page">
 
-                    Loading...
-
-                </div>
-
+            <div class="page-header">
+                <h2>Read OPC UA Node</h2>
             </div>
 
-        </div>
+            <div class="card" style="max-width: 600px;">
+                <label style="font-weight:600;">Node ID:</label>
+                <input id="readNodeId" type="text" placeholder="e.g. ns=2;s=Alarm or ns=1;i=301" style="width: 100%; margin: 8px 0 16px 0; padding: 10px; border-radius: 6px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border-color);">
 
-    </div>
-
-</section>
-<!-- ====================================== -->
-<!-- MODBUS REGISTER MONITOR -->
-<!-- ====================================== -->
-
-<section id="registers" class="page">
-
-    <div class="page-header">
-
-        <h2>Modbus Register Monitor</h2>
-
-        <div class="toolbar">
-
-            <button onclick="loadIO()">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="panel">
-
-        <div class="io-layout">
-
-            <!-- Input Registers -->
-
-            <div class="card">
-
-                <h3>Input Registers (IR)</h3>
-
-                <div id="inputRegisters" class="io-grid">
-
-                    Loading...
-
+                <div style="display:flex; gap:10px; margin-bottom: 16px;">
+                    <button class="btn-primary" onclick="readNode()"><i class="fa-solid fa-magnifying-glass"></i> Read Node</button>
+                    <button onclick="clearReadBox()"><i class="fa-solid fa-eraser"></i> Clear</button>
                 </div>
 
+                <label style="font-weight:600;">Read Result:</label>
+                <textarea id="readValue" readonly style="width: 100%; height: 160px; margin-top: 8px; background: var(--bg-surface); color: var(--text-primary); font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color);"></textarea>
             </div>
 
-            <!-- Holding Registers -->
+        </section>
 
-            <div class="card">
+        <!-- ====================================== -->
+        <!-- ROBOT DETAILS -->
+        <!-- ====================================== -->
 
-                <h3>Holding Registers (HR)</h3>
+        <section id="robot" class="page">
 
-                <div id="holdingRegisters" class="io-grid">
+            <div class="page-header">
+                <h2>Robot Controller Details</h2>
+            </div>
 
-                    Loading...
-
+            <div class="cards-grid">
+                <div class="card">
+                    <h3><i class="fa-solid fa-microchip" style="color: var(--fanuc-yellow);"></i> Controller Information</h3>
+                    <table class="info-table">
+                        <tr><td style="width: 200px;"><b>Model</b></td><td id="mModel">--</td></tr>
+                        <tr><td><b>Loaded Program</b></td><td id="mProgram">--</td></tr>
+                        <tr><td><b>Mode (ModeState)</b></td><td id="mMode">--</td></tr>
+                    </table>
                 </div>
 
+                <div class="card">
+                    <h3><i class="fa-solid fa-network-wired" style="color: var(--industrial-blue);"></i> Connection Information</h3>
+                    <table class="info-table">
+                        <tr><td style="width: 200px;"><b>Status</b></td><td id="robotStatus">Disconnected</td></tr>
+                        <tr><td><b>Robot ID</b></td><td id="robotIdDisplay">--</td></tr>
+                        <tr><td><b>Endpoint URL</b></td><td id="robotEndpoint">--</td></tr>
+                        <tr><td><b>Polling Rate</b></td><td id="currentPollRate">2000 ms</td></tr>
+                    </table>
+                </div>
             </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ====================================== -->
-<!-- PROGRAM MONITOR -->
-<!-- ====================================== -->
-
-<section id="programs" class="page">
-
-    <div class="page-header">
-
-        <h2>Program Monitor</h2>
-
-        <div class="toolbar">
-
-            <button onclick="loadPrograms()">
-
-                <i class="fa-solid fa-rotate"></i>
-
-                Refresh
-
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="card-grid">
-
-        <div class="card">
-
-            <h3>Current Program</h3>
-
-            <p id="progName">--</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Program Status</h3>
-
-            <p id="progStatus">--</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Current Line</h3>
-
-            <p id="progLine">--</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Cycle Count</h3>
-
-            <p id="progCycle">--</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Execution Time</h3>
-
-            <p id="progTime">--</p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Program Speed</h3>
-
-            <p id="progSpeed">--</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- ALARM MONITOR -->
-<!-- ====================================== -->
-
-<section id="alarms" class="page">
-
-    <div class="page-header">
-
-        <h2>Alarm Monitor</h2>
-
-        <div class="toolbar">
-
-            <button onclick="loadAlarms()">
-
-                <i class="fa-solid fa-rotate"></i>
-
-                Refresh
-
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="robot-grid">
-
-        <div class="card">
-
-            <h3>Current Alarm</h3>
-
-            <table class="info-table">
-
-                <tr>
-
-                    <td>Alarm Code</td>
-
-                    <td id="alarmCode">--</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Description</td>
-
-                    <td id="alarmDescription">No Alarm</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Severity</td>
-
-                    <td id="alarmSeverity">--</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Timestamp</td>
-
-                    <td id="alarmTime">--</td>
-
-                </tr>
-
-            </table>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Alarm History</h3>
-
-            <table class="info-table">
-
-                <thead>
-
-                    <tr>
-
-                        <th>Code</th>
-
-                        <th>Description</th>
-
-                        <th>Severity</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="alarmHistory">
-
-                    <tr>
-
-                        <td colspan="3">No alarms available.</td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- LOGS -->
-<!-- ====================================== -->
-
-<section id="logs" class="page">
-
-    <div class="page-header">
-
-        <h2>System Logs</h2>
-
-        <div class="toolbar">
-
-            <button onclick="clearLogs()">
-                <i class="fa-solid fa-trash"></i>
-                Clear Logs
-            </button>
-
-            <button onclick="exportLogs()">
-                <i class="fa-solid fa-download"></i>
-                Export
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="panel">
-
-        <textarea
-            id="logArea"
-            rows="20"
-            readonly
-            placeholder="Connection logs, read/write operations, subscriptions and OPC UA events will appear here..."></textarea>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
-<!-- SETTINGS -->
-<!-- ====================================== -->
-
-<section id="settings" class="page">
-
-    <div class="page-header">
-
-        <h2>Settings</h2>
-
-    </div>
-
-    <div class="settings-grid">
-
-        <!-- Connection -->
-
-        <div class="panel">
-
-            <h3>Connection Settings</h3>
-
-            <label>Polling Rate (ms)</label>
-
-            <input
-                type="number"
-                id="pollRate"
-                value="1000"
-                min="100">
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="autoConnect">
-
-                Auto Connect
-
-            </label>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="autoRefresh"
-                    checked>
-
-                Auto Refresh Dashboard
-
-            </label>
-
-            <button onclick="saveSettings()">
-
-                <i class="fa-solid fa-floppy-disk"></i>
-
-                Save Settings
-
-            </button>
-
-        </div>
-
-        <!-- Display -->
-
-        <div class="panel">
-
-            <h3>Display Settings</h3>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="darkMode"
-                    onchange="toggleDarkMode()">
-
-                Enable Dark Mode
-
-            </label>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="animations"
-                    checked>
-
-                Enable Animations
-
-            </label>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="showNotifications"
-                    checked>
-
-                Show Notifications
-
-            </label>
-
-            <button onclick="toggleDarkMode()">
-
-                <i class="fa-solid fa-moon"></i>
-
-                Toggle Theme
-
-            </button>
-
-        </div>
-
-        <!-- Dashboard -->
-
-        <div class="panel">
-
-            <h3>Dashboard Information</h3>
-
-            <table class="info-table">
-
-                <tr>
-                    <td>Application</td>
-                    <td>FANUC OPC UA Dashboard</td>
-                </tr>
-
-                <tr>
-                    <td>Version</td>
-                    <td>1.0.0</td>
-                </tr>
-
-                <tr>
-                    <td>Backend</td>
-                    <td>Node.js + Express</td>
-                </tr>
-
-                <tr>
-                    <td>Protocol</td>
-                    <td>OPC UA</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
+        </section>
+
+        <!-- Hidden log buffer -->
+        <textarea id="logArea" style="display: none;"></textarea>
+
+        </div> <!-- /.content-viewport -->
+
+        <!-- ====================================== -->
+        <!-- INDUSTRIAL FOOTER -->
+        <!-- ====================================== -->
+        <footer class="footer">
+            <span>&copy; 2026 FANUC Industrial Robot Manager &bull; Multi-Robot OPC UA &amp; FTP Automation System</span>
+            <span id="footerSystemTime">--:--:--</span>
+        </footer>
 
     </main>
 
 </div>
 
 <!-- ====================================== -->
-<!-- JAVASCRIPT -->
+<!-- ROBOT ADD / EDIT MODAL -->
 <!-- ====================================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div id="robotModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 id="modalTitle"><i class="fa-solid fa-robot" style="color: var(--fanuc-yellow);"></i> Add FANUC Robot</h3>
+            <button class="close-btn" onclick="closeRobotModal()">&times;</button>
+        </div>
+
+        <form id="robotForm" onsubmit="handleRobotFormSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Robot ID * (e.g. Robot_1)</label>
+                    <input type="text" id="formRobotId" required placeholder="Robot_1">
+                </div>
+
+                <div class="form-group">
+                    <label>Friendly Name *</label>
+                    <input type="text" id="formRobotName" required placeholder="Assembly Cell Robot 1">
+                </div>
+
+                <div class="form-group">
+                    <label>Controller IP Address *</label>
+                    <input type="text" id="formIp" required placeholder="192.168.1.101">
+                </div>
+
+                <div class="form-group">
+                    <label>OPC UA Port *</label>
+                    <input type="number" id="formPort" required value="4880">
+                </div>
+
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <label>OPC UA Endpoint *</label>
+                    <input type="text" id="formEndpoint" required value="/FANUC/NanoUaServer">
+                </div>
+
+                <div class="form-group">
+                    <label>FTP IP (Controller FTP)</label>
+                    <input type="text" id="formFtpIp" placeholder="Same as IP">
+                </div>
+
+                <div class="form-group">
+                    <label>FTP Port</label>
+                    <input type="number" id="formFtpPort" value="21">
+                </div>
+
+                <div class="form-group">
+                    <label>FTP Username</label>
+                    <input type="text" id="formFtpUser" value="anonymous">
+                </div>
+
+                <div class="form-group">
+                    <label>FTP Password</label>
+                    <input type="password" id="formFtpPassword" placeholder="••••••••">
+                </div>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 12px;">
+                <button type="button" class="btn-sm" onclick="closeRobotModal()">Cancel</button>
+                <button type="submit" class="btn-sm btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Robot</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ====================================== -->
+<!-- SCRIPTS -->
+<!-- ====================================== -->
 
 <script src="app.js"></script>
 
 </body>
-
 </html>

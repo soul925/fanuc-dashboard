@@ -1,84 +1,134 @@
 const opcua = require("../services/opcua");
+const robotManager = require("../services/robotManager");
 
 /* ===========================
-   BROWSE
+   BROWSE (CHILDREN / SPECIFIC NODE)
 =========================== */
 
 exports.browse = async (req, res) => {
-
     try {
-
-        const robotId = req.params.robotId;
-
-        const data = await opcua.browseNamespace(robotId);
-
+        const { robotId } = req.params;
+        const nodeId = req.query.nodeId || "ObjectsFolder";
+        const data = await opcua.browseChildren(robotId, nodeId);
         res.json({
             success: true,
-            nodes: data
+            robotId,
+            currentNode: data.currentNode,
+            count: data.childrenCount,
+            nodes: data.children
         });
-
-    }
-
-    catch (err) {
-
+    } catch (err) {
         res.status(500).json({
-
             success: false,
             message: err.message
-
         });
-
     }
-
 };
+
+/* ===========================
+   BROWSE IMMEDIATE CHILDREN
+=========================== */
+
+exports.browseChildren = async (req, res) => {
+    try {
+        const { robotId } = req.params;
+        const nodeId = req.query.nodeId || req.body.nodeId || "ObjectsFolder";
+        const data = await opcua.browseChildren(robotId, nodeId);
+        res.json({
+            success: true,
+            robotId,
+            currentNode: data.currentNode,
+            count: data.childrenCount,
+            nodes: data.children
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+    }
+};
+
+/* ===========================
+   BROWSE FULL TREE
+=========================== */
+
+exports.browseTree = async (req, res) => {
+    try {
+        const { robotId } = req.params;
+        const rootNodeId = req.query.nodeId || "ObjectsFolder";
+        const data = await opcua.browseTree(robotId, rootNodeId);
+        res.json({
+            success: true,
+            robotId,
+            nodes: data
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+    }
+};
+
+/* ===========================
+   GET NODE DETAILS
+=========================== */
+
+exports.getNodeDetails = async (req, res) => {
+    try {
+        const { robotId } = req.params;
+        const nodeId = req.query.nodeId || req.params.nodeId;
+        if (!nodeId) {
+            return res.status(400).json({ success: false, message: "Node ID is required" });
+        }
+        const data = await opcua.getNodeDetails(robotId, nodeId);
+        res.json({
+            success: true,
+            robotId,
+            details: data
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+    }
+};
+
 /* ===========================
    CONNECT
 =========================== */
 
 exports.connect = async (req, res) => {
-
     try {
+        let { robotId, ip, port, endpoint } = req.body;
 
-        const {
+        if (!robotId) {
+            return res.status(400).json({ success: false, message: "Robot ID is required" });
+        }
 
-            robotId,
+        if (!ip) {
+            const bot = robotManager.getRobot(robotId);
+            if (bot) {
+                ip = bot.ip;
+                port = bot.port || 4880;
+                endpoint = bot.endpoint || "/FANUC/NanoUaServer";
+            }
+        }
 
-            ip,
+        if (!ip) {
+            return res.status(400).json({ success: false, message: `Missing connection parameters for ${robotId}` });
+        }
 
-            port,
-
-            endpoint
-
-        } = req.body;
-
-        const result = await opcua.connect(
-
-            robotId,
-
-            ip,
-
-            port,
-
-            endpoint
-
-        );
-
+        const result = await opcua.connect(robotId, ip, port || 4880, endpoint || "/FANUC/NanoUaServer");
         res.json(result);
-
-    }
-
-    catch (err) {
-
+    } catch (err) {
         res.status(500).json({
-
             success: false,
-
             message: err.message
-
         });
-
     }
-
 };
 
 /* ===========================
@@ -116,29 +166,35 @@ exports.disconnect = async (req, res) => {
 =========================== */
 
 exports.status = async (req, res) => {
-
     try {
-
         const robotId = req.params.robotId;
-
         const data = await opcua.readStatus(robotId);
-
         res.json(data);
-
-    }
-
-    catch (err) {
-
+    } catch (err) {
         res.status(500).json({
-
             success: false,
-
             message: err.message
-
         });
-
     }
+};
 
+exports.allStatus = async (req, res) => {
+    try {
+        const data = await opcua.readAllRobotsSummary();
+        res.json({
+            success: true,
+            totalRobots: data.totalRobots !== undefined ? data.totalRobots : (data.robots ? data.robots.length : 0),
+            onlineRobots: data.onlineRobots !== undefined ? data.onlineRobots : 0,
+            totalActiveAlarms: data.totalActiveAlarms !== undefined ? data.totalActiveAlarms : 0,
+            count: data.robots ? data.robots.length : (Array.isArray(data) ? data.length : 0),
+            robots: data.robots || data
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+    }
 };
 /* ===========================
    MODBUS
@@ -425,8 +481,6 @@ exports.connectedRobots = (req, res) => {
 /* ===========================
    ROBOT MANAGER
 =========================== */
-
-const robotManager = require("../services/robotManager");
 
 exports.getRobots = (req, res) => {
 

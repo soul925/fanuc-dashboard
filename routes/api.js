@@ -30,14 +30,18 @@ router.get("/robots/connected", controller.connectedRobots);
     ROBOT STATUS
 =========================================*/
 
+router.get("/status-all", controller.allStatus);
 router.get("/status/:robotId", controller.status);
 router.get("/modbus/:robotId", controller.modbus);
 
 /*=========================================
-    OPC UA BROWSER
+    OPC UA BROWSER & NAVIGATOR
 =========================================*/
 
 router.get("/browse/:robotId", controller.browse);
+router.get("/browse-children/:robotId", controller.browseChildren);
+router.get("/browse-tree/:robotId", controller.browseTree);
+router.get("/node-details/:robotId", controller.getNodeDetails);
 
 /*=========================================
     READ

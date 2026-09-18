@@ -1,0 +1,10 @@
+Func       Date      Time    Tick       NavID              Text
+POWR  72 21-AUG-26 12:02:48   5E4 Power Cycle 
+KEY   72 21-AUG-26 12:05:20   7D4 /wizard/guided/steps Initial Setup
+KEY   72 21-AUG-26 12:05:20   8AF /wizard/guided/steps Initial Setup
+EXIT  72 21-AUG-26 12:05:20   8AF 1631 3 
+KEY   72 21-AUG-26 12:05:20   905 /wizard/guided/steps Initial Setup
+KEY   72 21-AUG-26 12:06:06  B83A /wizard/guided/steps Initial Setup
+KEY   72 21-AUG-26 12:06:06  B83A /wizard/guided/steps Initial Setup
+EXIT  72 21-AUG-26 12:06:06  B83A 18 1 
+POWR  72 21-AUG-26 12:08:30   5D1 Power Cycle 

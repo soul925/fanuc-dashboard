@@ -1,31 +1,31 @@
+// services/browser.js
+
 const {
     BrowseDirection,
     NodeClass,
-    AttributeIds
+    DataType,
+    AttributeIds,
+    makeNodeId
 } = require("node-opcua");
 
 const cache = require("./cache");
+const logger = require("./logger");
 
-/*=========================================
-    GET AVAILABLE WIDGETS
-=========================================*/
-
+/**
+ * Get recommended widget types based on DataType and Writable flags
+ */
 function getWidgetTypes(dataType, writable) {
-
     const widgets = ["card"];
+    const typeStr = String(dataType || "");
 
-    switch (String(dataType)) {
-
+    switch (typeStr) {
         case "Boolean":
         case "1":
-
             widgets.push("led");
-
             if (writable) {
                 widgets.push("switch");
                 widgets.push("button");
             }
-
             break;
 
         case "Double":
@@ -42,186 +42,293 @@ function getWidgetTypes(dataType, writable) {
         case "8":
         case "9":
         case "10":
-
             widgets.push("gauge");
             widgets.push("progress");
             widgets.push("chart");
-
             break;
 
         case "String":
         case "12":
-
-            widgets.push("text");
-
-            break;
-
         default:
-
             widgets.push("text");
-
     }
 
     return widgets;
-
 }
 
-/*=========================================
-    BROWSE OPC UA TREE
-=========================================*/
+/**
+ * Helper to safely format OPC UA data values
+ */
+function formatNodeValue(rawVal) {
+    if (rawVal === undefined || rawVal === null) return "null";
+    if (typeof rawVal === "object") {
+        if (Array.isArray(rawVal)) {
+            return JSON.stringify(rawVal);
+        }
+        if (rawVal instanceof Date) {
+            return rawVal.toISOString();
+        }
+        return JSON.stringify(rawVal);
+    }
+    return String(rawVal);
+}
 
-async function browseNode(
-    robotId,
-    session,
-    nodeId = "ObjectsFolder",
-    visited = new Set()
-) {
-
-    if (visited.has(nodeId.toString())) {
-        return [];
+/**
+ * Browse immediate children of a specific node for the Browser Navigator Panel.
+ * Fast, responsive, and returns rich metadata for table display.
+ */
+async function browseChildren(robotId, session, targetNodeId = "ObjectsFolder") {
+    if (!session) {
+        throw new Error(`Robot ${robotId} has no active OPC UA session.`);
     }
 
-    visited.add(nodeId.toString());
+    const startNode = targetNodeId || "ObjectsFolder";
 
-    let result;
-
-    try {
-
-        result = await session.browse({
-
-            nodeId,
-
-            referenceTypeId: "HierarchicalReferences",
-
-            browseDirection: BrowseDirection.Forward,
-
-            includeSubtypes: true,
-
-            nodeClassMask: 0,
-
-            resultMask: 63
-
-        });
-
-         console.log(
-        "Browsing:",
-        nodeId.toString(),
-        "->",
-        result.references?.length || 0,
-        "children"
-        );
-    }
-
-    catch (err) {
-
-        console.log("Browse Error:", err.message);
-
-        return [];
-
-    }
-
-    const children = [];
-
-    for (const ref of result.references || []) {
-
-    console.log(
-        ref.browseName?.name,
-        ref.nodeId.toString(),
-        NodeClass[ref.nodeClass]
-    );
-
-    const node = {
-
-        nodeId: ref.nodeId.toString(),
-
-        browseName: ref.browseName?.name || "",
-
-        displayName: ref.displayName?.text || "",
-
-        nodeClass: NodeClass[ref.nodeClass],
-
+    // 1. Read Current Node Information
+    let currentNode = {
+        nodeId: startNode.toString(),
+        browseName: startNode.toString(),
+        displayName: startNode.toString(),
+        nodeClass: "Object",
+        dataType: "--",
         value: null,
-
-        dataType: null,
-
         writable: false,
-
-        widgetTypes: [],
-
-        children: []
-
+        accessLevel: "--"
     };
 
-        if (ref.nodeClass === NodeClass.Variable) {
+    try {
+        const [readDisp, readBrowse, readClass, readVal, readAccess] = await session.read([
+            { nodeId: startNode, attributeId: AttributeIds.DisplayName },
+            { nodeId: startNode, attributeId: AttributeIds.BrowseName },
+            { nodeId: startNode, attributeId: AttributeIds.NodeClass },
+            { nodeId: startNode, attributeId: AttributeIds.Value },
+            { nodeId: startNode, attributeId: AttributeIds.AccessLevel }
+        ]);
 
-            try {
-
-                const value = await session.read({
-
-                    nodeId: ref.nodeId,
-
-                    attributeId: AttributeIds.Value
-
-                });
-
-                node.value = value.value?.value ?? null;
-
-                node.dataType = value.value?.dataType?.key ||
-                                value.value?.dataType?.toString() ||
-                                "";
-
-            }
-
-            catch {}
-
-            try {
-
-                const access = await session.read({
-
-                    nodeId: ref.nodeId,
-
-                    attributeId: AttributeIds.AccessLevel
-
-                });
-
-                node.writable =
-                    ((access.value.value || 0) & 2) !== 0;
-
-            }
-
-            catch {}
-
-            node.widgetTypes = getWidgetTypes(
-                node.dataType,
-                node.writable
-            );
-
+        if (readDisp.value && readDisp.value.value) {
+            currentNode.displayName = readDisp.value.value.text || readDisp.value.value.toString();
         }
+        if (readBrowse.value && readBrowse.value.value) {
+            currentNode.browseName = readBrowse.value.value.name || readBrowse.value.value.toString();
+        }
+        if (readClass.value && readClass.value.value !== undefined) {
+            currentNode.nodeClass = NodeClass[readClass.value.value] || "Object";
+        }
+        if (readVal.value && readVal.value.value !== undefined) {
+            currentNode.value = readVal.value.value;
+            currentNode.dataType = readVal.value.dataType !== undefined
+                ? (DataType[readVal.value.dataType] || String(readVal.value.dataType))
+                : "--";
+        }
+        if (readAccess.value && readAccess.value.value !== undefined) {
+            const acc = readAccess.value.value || 0;
+            currentNode.writable = (acc & 2) !== 0;
+            currentNode.accessLevel = (acc & 1 ? "Read " : "") + (acc & 2 ? "Write" : "");
+        }
+    } catch {}
 
-        cache.addNode(robotId, node);
-
-        node.children = await browseNode(
-
-            robotId,
-
-            session,
-
-            ref.nodeId,
-
-            visited
-
-        );
-
-        children.push(node);
-
+    // 2. Browse Immediate References
+    let browseResult;
+    try {
+        browseResult = await session.browse({
+            nodeId: startNode,
+            referenceTypeId: "HierarchicalReferences",
+            browseDirection: BrowseDirection.Forward,
+            includeSubtypes: true,
+            nodeClassMask: 0,
+            resultMask: 63
+        });
+    } catch (err) {
+        logger.error(`[OPC UA Browse Error] Node ${startNode}: ${err.message}`, { robotId, module: "OPCUA" });
+        throw new Error(`Failed to browse node "${startNode}": ${err.message}`);
     }
 
-    return children;
+    const references = browseResult.references || [];
+    const children = [];
 
+    // Batch read values for all variable references for maximum speed
+    const variableIndices = [];
+    const readRequests = [];
+
+    for (let i = 0; i < references.length; i++) {
+        const ref = references[i];
+        const refNodeIdStr = ref.nodeId.toString();
+        const className = NodeClass[ref.nodeClass] || "Unknown";
+
+        const childNode = {
+            nodeId: refNodeIdStr,
+            browseName: ref.browseName?.name || refNodeIdStr,
+            displayName: ref.displayName?.text || ref.browseName?.name || refNodeIdStr,
+            nodeClass: className,
+            dataType: "--",
+            value: "--",
+            rawVal: null,
+            writable: false,
+            hasChildren: className === "Object" || className === "Folder" || className === "View" || className === "ObjectType"
+        };
+
+        if (ref.nodeClass === NodeClass.Variable) {
+            variableIndices.push(i);
+            readRequests.push(
+                { nodeId: ref.nodeId, attributeId: AttributeIds.Value },
+                { nodeId: ref.nodeId, attributeId: AttributeIds.AccessLevel }
+            );
+        }
+
+        children.push(childNode);
+    }
+
+    if (readRequests.length > 0) {
+        try {
+            const dataValues = await session.read(readRequests);
+            for (let v = 0; v < variableIndices.length; v++) {
+                const childIdx = variableIndices[v];
+                const valRes = dataValues[v * 2];
+                const accessRes = dataValues[v * 2 + 1];
+
+                if (valRes && valRes.value) {
+                    const raw = valRes.value.value;
+                    children[childIdx].rawVal = raw;
+                    children[childIdx].value = formatNodeValue(raw);
+                    if (valRes.value.dataType !== undefined) {
+                        children[childIdx].dataType = DataType[valRes.value.dataType] || String(valRes.value.dataType);
+                    }
+                }
+
+                if (accessRes && accessRes.value && accessRes.value.value !== undefined) {
+                    const acc = accessRes.value.value || 0;
+                    children[childIdx].writable = (acc & 2) !== 0;
+                }
+            }
+        } catch (err) {
+            logger.warn(`[OPC UA Batch Read] Could not read variable values: ${err.message}`, { robotId, module: "OPCUA" });
+        }
+    }
+
+    // Cache discovered nodes for search & telemetry
+    for (const c of children) {
+        cache.addNode(robotId, {
+            nodeId: c.nodeId,
+            browseName: c.browseName,
+            displayName: c.displayName,
+            nodeClass: c.nodeClass,
+            dataType: c.dataType,
+            value: c.rawVal,
+            writable: c.writable,
+            widgetTypes: getWidgetTypes(c.dataType, c.writable)
+        });
+    }
+
+    return {
+        currentNode,
+        childrenCount: children.length,
+        children
+    };
+}
+
+/**
+ * Browse OPC UA Tree down to maxDepth for the Left-hand Namespace Tree.
+ */
+async function browseTree(robotId, session, rootNodeId = "ObjectsFolder", currentDepth = 0, maxDepth = 3, visited = new Set()) {
+    if (!session) return [];
+    const nodeKey = rootNodeId.toString();
+
+    if (visited.has(nodeKey) || currentDepth > maxDepth) {
+        return [];
+    }
+    visited.add(nodeKey);
+
+    let result;
+    try {
+        result = await session.browse({
+            nodeId: rootNodeId,
+            referenceTypeId: "HierarchicalReferences",
+            browseDirection: BrowseDirection.Forward,
+            includeSubtypes: true,
+            nodeClassMask: 0,
+            resultMask: 63
+        });
+    } catch (err) {
+        return [];
+    }
+
+    const nodes = [];
+    for (const ref of result.references || []) {
+        const className = NodeClass[ref.nodeClass] || "Unknown";
+        const node = {
+            nodeId: ref.nodeId.toString(),
+            browseName: ref.browseName?.name || "",
+            displayName: ref.displayName?.text || ref.browseName?.name || ref.nodeId.toString(),
+            nodeClass: className,
+            dataType: "--",
+            value: null,
+            writable: false,
+            children: []
+        };
+
+        // If folder or object, recursively fetch tree down to maxDepth
+        if (ref.nodeClass === NodeClass.Object || ref.nodeClass === NodeClass.Folder || ref.nodeClass === NodeClass.View) {
+            node.children = await browseTree(
+                robotId,
+                session,
+                ref.nodeId,
+                currentDepth + 1,
+                maxDepth,
+                visited
+            );
+        }
+
+        nodes.push(node);
+    }
+
+    return nodes;
+}
+
+/**
+ * Detailed property inspection for a selected node.
+ */
+async function readNodeDetails(robotId, session, nodeId) {
+    if (!session) {
+        throw new Error(`Robot ${robotId} is not connected.`);
+    }
+
+    const [valRes, dispRes, browseRes, classRes, descRes, accessRes, userAccessRes] = await session.read([
+        { nodeId, attributeId: AttributeIds.Value },
+        { nodeId, attributeId: AttributeIds.DisplayName },
+        { nodeId, attributeId: AttributeIds.BrowseName },
+        { nodeId, attributeId: AttributeIds.NodeClass },
+        { nodeId, attributeId: AttributeIds.Description },
+        { nodeId, attributeId: AttributeIds.AccessLevel },
+        { nodeId, attributeId: AttributeIds.UserAccessLevel }
+    ]);
+
+    const className = classRes.value?.value !== undefined ? (NodeClass[classRes.value.value] || "Unknown") : "--";
+    const rawVal = valRes.value?.value ?? null;
+    const dataTypeStr = valRes.value?.dataType !== undefined ? (DataType[valRes.value.dataType] || String(valRes.value.dataType)) : "--";
+    const accessLevel = accessRes.value?.value || 0;
+    const isWritable = (accessLevel & 2) !== 0;
+
+    return {
+        nodeId: nodeId.toString(),
+        displayName: dispRes.value?.value?.text || "--",
+        browseName: browseRes.value?.value?.name || "--",
+        description: descRes.value?.value?.text || "--",
+        nodeClass: className,
+        dataType: dataTypeStr,
+        statusCode: valRes.statusCode?.name || "Good",
+        sourceTimestamp: valRes.sourceTimestamp ? valRes.sourceTimestamp.toISOString() : "--",
+        serverTimestamp: valRes.serverTimestamp ? valRes.serverTimestamp.toISOString() : "--",
+        accessLevel: (accessLevel & 1 ? "Read " : "") + (accessLevel & 2 ? "Write" : "--"),
+        writable: isWritable,
+        value: rawVal,
+        formattedValue: formatNodeValue(rawVal)
+    };
 }
 
 module.exports = {
-
-    browseNode
-
+    browseChildren,
+    browseTree,
+    readNodeDetails,
+    getWidgetTypes,
+    formatNodeValue
 };

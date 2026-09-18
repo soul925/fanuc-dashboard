@@ -6,135 +6,175 @@ const {
     AttributeIds,
     ClientMonitoredItem
 } = require("node-opcua");
-
-let subscription = null;
-const monitoredItems = new Map();
+const logger = require("./logger");
 
 /**
- * Create subscription
+ * Per-Robot Subscriptions Map
+ * Key: robotId -> Value: {
+ *    subscription: ClientSubscription,
+ *    monitoredItems: Map<nodeId, ClientMonitoredItem>
+ * }
  */
-async function createSubscription(session) {
+const robotSubscriptions = new Map();
 
-    if (subscription) {
-        return subscription;
+/**
+ * Create or retrieve an existing subscription for a specific robot.
+ */
+async function createSubscription(robotId, session) {
+    if (!robotId || !session) {
+        throw new Error("robotId and session are required to create subscription");
     }
 
-    subscription = ClientSubscription.create(session, {
+    if (robotSubscriptions.has(robotId)) {
+        const entry = robotSubscriptions.get(robotId);
+        if (entry.subscription && !entry.subscription.isTerminated) {
+            return entry.subscription;
+        }
+    }
 
+    const subscription = ClientSubscription.create(session, {
         requestedPublishingInterval: 500,
         requestedLifetimeCount: 100,
         requestedMaxKeepAliveCount: 20,
-
         maxNotificationsPerPublish: 100,
-
         publishingEnabled: true,
-
         priority: 10
-
     });
 
+    const entry = {
+        subscription,
+        monitoredItems: new Map()
+    };
+    robotSubscriptions.set(robotId, entry);
+
     subscription.on("started", () => {
-
-        console.log("Subscription Started");
-
+        console.log(`Robot ${robotId} → Subscription Active`);
+        logger.info(`[OPC UA] Robot ${robotId} → Subscription Active`, { robotId, module: "Subscriber" });
     });
 
     subscription.on("terminated", () => {
-
-        console.log("Subscription Terminated");
-
-        subscription = null;
-
+        console.log(`Robot ${robotId} → Subscription Terminated`);
+        logger.info(`[OPC UA] Robot ${robotId} → Subscription Terminated`, { robotId, module: "Subscriber" });
+        robotSubscriptions.delete(robotId);
     });
 
     return subscription;
-
 }
 
 /**
- * Subscribe to one node
+ * Subscribe to a single OPC UA node for a specific robot.
  */
-async function subscribeNode(session, nodeId, callback) {
+async function subscribeNode(robotId, session, nodeId, callback) {
+    // Support signature overload: subscribeNode(session, nodeId, callback)
+    if (typeof robotId !== "string" && session && typeof session !== "string") {
+        callback = nodeId;
+        nodeId = session;
+        session = robotId;
+        robotId = "default";
+    }
 
-    const sub = await createSubscription(session);
+    const sub = await createSubscription(robotId, session);
+    const entry = robotSubscriptions.get(robotId);
+
+    // If already monitoring this node on this robot, return
+    if (entry.monitoredItems.has(nodeId)) {
+        return entry.monitoredItems.get(nodeId);
+    }
 
     const item = ClientMonitoredItem.create(
-
         sub,
-
         {
             nodeId,
             attributeId: AttributeIds.Value
         },
-
         {
             samplingInterval: 500,
             discardOldest: true,
             queueSize: 100
         },
-
         TimestampsToReturn.Both
-
     );
 
     item.on("changed", (dataValue) => {
-
-        callback({
-
-            nodeId,
-
-            value: dataValue.value.value,
-
-            dataType: dataValue.value.dataType,
-
-            sourceTimestamp: dataValue.sourceTimestamp,
-
-            serverTimestamp: dataValue.serverTimestamp
-
-        });
-
+        if (typeof callback === "function") {
+            callback({
+                robotId,
+                nodeId,
+                value: dataValue.value?.value ?? null,
+                dataType: dataValue.value?.dataType ?? null,
+                sourceTimestamp: dataValue.sourceTimestamp,
+                serverTimestamp: dataValue.serverTimestamp
+            });
+        }
     });
 
-    monitoredItems.set(nodeId, item);
-
+    entry.monitoredItems.set(nodeId, item);
+    console.log(`Robot ${robotId} → Monitored Item Added (${nodeId})`);
+    return item;
 }
 
 /**
- * Stop monitoring one node
+ * Stop monitoring one node on a specific robot.
  */
-async function unsubscribeNode(nodeId) {
+async function unsubscribeNode(robotId, nodeId) {
+    const entry = robotSubscriptions.get(robotId);
+    if (!entry) return;
 
-    const item = monitoredItems.get(nodeId);
-
+    const item = entry.monitoredItems.get(nodeId);
     if (!item) return;
 
-    await item.terminate();
+    try {
+        await item.terminate();
+    } catch {}
 
-    monitoredItems.delete(nodeId);
-
+    entry.monitoredItems.delete(nodeId);
+    console.log(`Robot ${robotId} → Monitored Item Removed (${nodeId})`);
 }
 
 /**
- * Stop everything
+ * Terminate subscription and clear all monitored items for a specific robot.
  */
-async function terminateSubscription() {
+async function terminateSubscription(robotId) {
+    if (!robotId) {
+        // If called without robotId, terminate all robot subscriptions
+        const allIds = Array.from(robotSubscriptions.keys());
+        for (const id of allIds) {
+            await terminateSubscription(id);
+        }
+        return;
+    }
 
-    if (!subscription) return;
+    const entry = robotSubscriptions.get(robotId);
+    if (!entry) return;
 
-    await subscription.terminate();
+    for (const [nodeId, item] of entry.monitoredItems.entries()) {
+        try {
+            await item.terminate();
+        } catch {}
+    }
+    entry.monitoredItems.clear();
 
-    monitoredItems.clear();
+    if (entry.subscription) {
+        try {
+            await entry.subscription.terminate();
+        } catch {}
+    }
 
+    robotSubscriptions.delete(robotId);
+    console.log(`Robot ${robotId} → Subscription Terminated`);
+}
+
+/**
+ * Check if a robot has an active subscription.
+ */
+function hasActiveSubscription(robotId) {
+    return robotSubscriptions.has(robotId);
 }
 
 module.exports = {
-
     createSubscription,
-
     subscribeNode,
-
     unsubscribeNode,
-
-    terminateSubscription
-
+    terminateSubscription,
+    hasActiveSubscription
 };

@@ -1,0 +1,653 @@
+[2026-08-21T06:43:22.030Z] [ERROR] [OPC UA] Connection error for Robot_1 (opc.tcp://192.168.4.90:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (connect ETIMEDOUT 192.168.4.90:4880)
+[2026-08-21T06:58:42.001Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T06:58:54.138Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T06:58:55.158Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T06:59:54.173Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T06:59:54.765Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T07:00:06.084Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T07:00:17.788Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T07:00:19.832Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T07:00:59.591Z] [ERROR] [OPC UA] Connection error for Robot_1 (opc.tcp://127.0.0.1:4880/FANUC/NanoUaServer): The connection cannot be established with server opc.tcp://127.0.0.1:4880/FANUC/NanoUaServer .
+Please check that the server is up and running or your network configuration.
+Err = (connect ECONNREFUSED 127.0.0.1:4880)
+[2026-08-21T07:01:05.029Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (Invalid endpoint url opc.tcp://192.168,4.133:4880/FANUC/NanoUaServer)
+[2026-08-21T07:01:43.088Z] [ERROR] [OPC UA] Connection error for Robot_3 (opc.tcp://192.168.1.103:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (connect ETIMEDOUT 192.168.1.103:4880)
+[2026-08-21T07:32:42.944Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_1","limit":10,"search":"","status":""}}
+[2026-08-21T07:33:53.512Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:33:53.521Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:33:53.531Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:33:54.850Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:33:54.859Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:33:54.868Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:33:56.831Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:33:56.839Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:33:56.846Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:33:58.829Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:33:58.837Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:33:58.845Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:00.833Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:00.843Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:00.854Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:02.830Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:02.838Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:02.847Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:04.543Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:04.554Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:04.563Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:05.227Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":1000}}
+[2026-08-21T07:34:06.547Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:06.558Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:06.571Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:07.992Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":1000}}
+[2026-08-21T07:34:08.549Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:08.568Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:08.589Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:10.544Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:10.554Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:10.565Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:12.537Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:12.545Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:12.555Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:14.535Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:14.543Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:14.552Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:14.789Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":1000}}
+[2026-08-21T07:34:28.920Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:28.928Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:28.939Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:30.777Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:30.787Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:30.795Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:32.775Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:32.784Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:32.794Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:34.776Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:34.784Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:34.793Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:36.772Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:36.780Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:36.788Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:38.770Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:38.779Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:38.787Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:40.770Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:40.779Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:40.787Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:42.777Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:42.787Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:42.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:44.775Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:44.785Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:44.801Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:46.776Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:46.784Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:46.792Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:48.539Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:48.549Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:48.561Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:50.778Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:50.786Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:50.794Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:52.771Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:52.779Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:52.787Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:54.776Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:54.785Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:54.793Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:56.778Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:56.786Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:56.793Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:34:58.788Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:34:58.796Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:34:58.804Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:00.770Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:00.777Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:00.786Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:02.778Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:02.789Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:02.800Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:04.774Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:04.781Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:04.790Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:06.776Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:06.784Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:06.793Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:08.784Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:08.791Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:08.800Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:10.789Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:10.796Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:10.806Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:12.779Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:12.789Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:12.802Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:14.782Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:14.790Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:14.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T07:35:16.776Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T07:35:16.786Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T07:35:16.797Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:27.821Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:27.831Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:27.839Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:29.082Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:29.092Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:29.100Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:30.316Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:30.322Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:30.330Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:30.355Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_2"}
+[2026-08-21T09:05:30.363Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_2","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:30.369Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_2","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:31.072Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:31.078Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:31.085Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:31.094Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_2"}
+[2026-08-21T09:05:31.101Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_2","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:31.108Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_2","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:33.083Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:33.090Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:33.098Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:33.105Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_2"}
+[2026-08-21T09:05:33.112Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_2","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:33.119Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_2","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:34.520Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:34.528Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:34.535Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:35.076Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:35.083Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:35.090Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:37.144Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:37.152Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:37.160Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:38.701Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:38.708Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:38.717Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:39.087Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:39.096Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:39.103Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:41.069Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:41.076Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:41.084Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:43.077Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:43.084Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:43.093Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:05:45.074Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:05:45.082Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:05:45.089Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:10:42.480Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:42.487Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:42.495Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":100,"search":"","status":"all"}}
+[2026-08-21T09:10:43.087Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:43.094Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:43.101Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":100,"search":"","status":"all"}}
+[2026-08-21T09:10:45.088Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:45.095Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:45.103Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":100,"search":"","status":"all"}}
+[2026-08-21T09:10:47.081Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:47.088Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:47.095Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":100,"search":"","status":"all"}}
+[2026-08-21T09:10:49.088Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:49.097Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:49.105Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":100,"search":"","status":"all"}}
+[2026-08-21T09:10:49.141Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:49.148Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:49.154Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:10:51.085Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:51.100Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:51.110Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:10:51.801Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:51.808Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:51.815Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Active"}}
+[2026-08-21T09:10:53.084Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:53.091Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:53.098Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Active"}}
+[2026-08-21T09:10:53.902Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:53.909Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:53.917Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:10:55.082Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:55.089Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:55.097Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:10:57.083Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:57.091Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:57.099Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:10:59.089Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:10:59.100Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:10:59.108Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:11:01.200Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:01.206Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:01.215Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:11:03.238Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:03.253Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:03.261Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:11:05.049Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:11:07.051Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:07.058Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:07.066Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:11:09.053Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:09.060Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:09.067Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Cleared"}}
+[2026-08-21T09:11:10.183Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:10.189Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:10.198Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Active"}}
+[2026-08-21T09:11:11.049Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:11.055Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:11.063Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"Active"}}
+[2026-08-21T09:11:12.331Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:12.337Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:12.346Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:13.055Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:13.064Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:13.071Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:15.056Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:15.063Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:15.071Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:16.108Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:16.114Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:16.121Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:17.049Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:17.057Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:17.065Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:19.058Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:19.069Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:19.077Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:21.053Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:21.060Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:21.069Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:22.555Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:22.563Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:22.570Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:23.055Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:23.063Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:23.070Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:25.054Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:25.067Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:25.074Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:47.398Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:47.404Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:47.414Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:49.057Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:49.076Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:49.084Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:51.065Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:51.072Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:51.080Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:53.050Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:53.057Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:53.066Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:55.806Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:55.816Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:55.824Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:57.805Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:57.812Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:57.819Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:11:59.800Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:11:59.807Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:11:59.814Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:01.802Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:01.810Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:01.817Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:03.802Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:03.809Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:03.817Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:05.802Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:05.810Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:05.819Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:07.808Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:07.816Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:07.823Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:09.802Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:09.810Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:09.818Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:11.806Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:11.814Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:11.836Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:13.801Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:13.809Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:13.816Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:15.805Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:15.813Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:15.822Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:17.804Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:12:17.811Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:12:17.819Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:19.805Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:21.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:23.802Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:25.794Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:27.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:29.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:31.804Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:33.797Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:35.800Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:37.801Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:39.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:41.477Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:43.044Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:45.041Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:12:47.049Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:13:01.639Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:03.827Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:05.827Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:07.834Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:09.832Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:11.837Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:13.071Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:15.100Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:17.093Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:26.071Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:27.073Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:29.089Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:31.094Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:33.077Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:35.093Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:37.075Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:39.078Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:41.075Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:43.087Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:45.068Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:47.082Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:49.085Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:49.089Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:49.093Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:51.076Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:51.081Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:51.085Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:13:53.033Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:53.039Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:53.044Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:13:53.065Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:53.070Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:53.076Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:13:55.044Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:55.050Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:55.056Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:13:57.774Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:57.778Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:57.783Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:13:57.804Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:57.809Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:57.814Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:13:59.045Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:13:59.050Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:13:59.056Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:01.042Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:01.046Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:01.050Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:03.044Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:03.048Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:03.054Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:06.046Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:06.050Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:06.056Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:14:07.076Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:07.080Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:07.086Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:14:07.620Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:07.625Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:07.630Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T09:14:08.783Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:08.789Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:08.794Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:09.043Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:09.048Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:09.053Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:11.042Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:11.046Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:11.052Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:13.050Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:13.063Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:13.067Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:15.799Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:15.805Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:15.812Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:17.800Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:17.804Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:17.809Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:19.796Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:19.800Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:19.806Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:21.801Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:21.807Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:21.813Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:23.800Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:23.806Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:23.811Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:25.797Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:25.802Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:25.807Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:27.803Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:27.808Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:27.813Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:29.799Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:29.806Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:29.811Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:31.805Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:31.809Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:31.815Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:33.795Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:33.800Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:33.805Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:35.797Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:35.804Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:35.809Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:37.803Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:37.813Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:37.822Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:39.798Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:39.803Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:39.808Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:41.796Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:41.800Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:41.805Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:43.803Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:43.807Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:43.813Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:45.804Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:45.808Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:45.813Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:47.800Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:47.806Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:47.811Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:49.798Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:49.802Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:49.808Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:51.805Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:51.810Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:51.815Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:53.797Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:53.802Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:53.808Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:55.798Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:55.804Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:55.809Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:57.799Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:57.804Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:57.810Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:14:59.804Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:14:59.808Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:14:59.812Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:01.806Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:01.811Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:01.816Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:03.800Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:03.805Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:03.810Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:05.800Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:05.805Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:05.810Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:07.807Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:07.812Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:07.820Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:09.795Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:09.799Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:09.806Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:11.803Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:11.808Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:11.813Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:13.802Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:13.807Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:13.816Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:15:29.805Z] [ERROR] Database getLastAlarm error: no such column: alarm_code {"robotId":"Robot_4"}
+[2026-08-21T09:15:29.810Z] [ERROR] Database saveAlarm error: table alarm_history has no column named robot_name {"robotId":"Robot_4","alarmCode":"SRVO-402","description":"DCS Cart. pos. limit(No.1,G1,M0) 11"}
+[2026-08-21T09:15:29.817Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:16:29.827Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:17:29.828Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:18:29.831Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:19:29.824Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:20:29.826Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:21:29.833Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:22:29.828Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:23:29.837Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:24:29.829Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:27:19.882Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:27:30.398Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:28:29.833Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:29:29.831Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:30:29.827Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:31:29.824Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:32:29.831Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:33:29.839Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:34:29.849Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:35:29.861Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:36:29.871Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:37:29.884Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:38:29.883Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:39:29.888Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:40:29.890Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:41:29.918Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:42:29.897Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:43:29.888Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:44:29.888Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:45:29.883Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:46:29.877Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:47:29.891Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:48:29.866Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:49:29.849Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:50:29.849Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:51:29.846Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:52:29.848Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:53:29.854Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:54:29.855Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:55:29.854Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:56:29.861Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:57:29.844Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:58:29.855Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T09:59:29.845Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:00:29.855Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:01:29.848Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:02:29.848Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:03:29.850Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:04:29.849Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:05:29.855Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:06:29.852Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:07:29.852Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:08:29.867Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:09:29.858Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:10:29.863Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:11:29.862Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:12:29.855Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T10:13:29.868Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T11:36:01.595Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T11:36:03.205Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":500,"search":"","status":"all"}}
+[2026-08-21T11:36:04.164Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:05.182Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:07.957Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:09.998Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:11.943Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:14.002Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:15.785Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_12","limit":500,"search":"","status":""}}
+[2026-08-21T11:36:15.802Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"all","limit":500,"search":"","status":""}}
+[2026-08-21T11:36:15.941Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:17.980Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:19.940Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:21.371Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:23.417Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:25.249Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:25.745Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:25.976Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:26.176Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:26.459Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:26.559Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:26.728Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:26.910Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:27.203Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:27.358Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:27.599Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:27.789Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:28.014Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:28.633Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:28.938Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:29.058Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:31.092Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:33.961Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:36.009Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:37.688Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:38.997Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:39.146Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:39.431Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:39.571Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:39.727Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:39.895Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:40.066Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:40.275Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:40.446Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:40.601Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:40.810Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:40.975Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:41.234Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:41.359Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:41.538Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:41.731Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:43.798Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:45.943Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:47.882Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:49.747Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:50.851Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:51.329Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:51.776Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:51.896Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:52.082Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:52.260Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:36:54.259Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:08.262Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:10.311Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:12.970Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:15.022Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:15.246Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_12","limit":500,"search":"","status":""}}
+[2026-08-21T11:37:16.248Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:17.989Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:20.955Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:23.010Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:24.960Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:25.979Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:26.447Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"all","limit":100,"search":"","status":"all"}}
+[2026-08-21T11:37:33.338Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_12","limit":500,"search":"","status":""}}
+[2026-08-21T11:37:50.796Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:52.916Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T11:37:54.959Z] [ERROR] Database getAlarmHistory error: no such column: robot_name {"options":{"robotId":"Robot_4","limit":5,"search":"","status":""}}
+[2026-08-21T12:18:39.273Z] [ERROR] [Backup Error at FTP connection] FTP connection to 192.0.2.1:21 timed out. {"robotId":"Dummy_Offline_Robot","module":"Backup"}
+[2026-08-21T12:29:36.847Z] [ERROR] BACKUP FAILED — Target ZIP file was not created on disk. {"robotId":"Robot_4","module":"Backup"}
+[2026-08-21T12:45:47.851Z] [ERROR] [OPC UA] Connection error for Robot_6 (opc.tcp://192.168.4.137:4880/FANUC/NanoUaServer): The connection cannot be established with server opc.tcp://192.168.4.137:4880/FANUC/NanoUaServer .
+Please check that the server is up and running or your network configuration.
+Err = (connect ECONNREFUSED 192.168.4.137:4880)
+[2026-08-21T12:45:49.250Z] [ERROR] [OPC UA] Connection error for Robot_6 (opc.tcp://192.168.4.137:4880/FANUC/NanoUaServer): The connection cannot be established with server opc.tcp://192.168.4.137:4880/FANUC/NanoUaServer .
+Please check that the server is up and running or your network configuration.
+Err = (connect ECONNREFUSED 192.168.4.137:4880)
+[2026-08-21T12:45:51.473Z] [ERROR] [OPC UA] Connection error for Robot_6 (opc.tcp://192.168.4.137:4880/FANUC/NanoUaServer): The connection cannot be established with server opc.tcp://192.168.4.137:4880/FANUC/NanoUaServer .
+Please check that the server is up and running or your network configuration.
+Err = (connect ECONNREFUSED 192.168.4.137:4880)
+[2026-08-26T12:35:57.123Z] [ERROR] [OPC UA] Connection error for Robot_2 (opc.tcp://192.168.4.133:4880/FANUC/NanoUaServer): The connection may have been rejected by server,
+ Err = (connect ETIMEDOUT 192.168.4.133:4880) {"robotId":"Robot_2","module":"OPC UA"}
+[2026-08-28T09:29:01.438Z] [ERROR] [Backup Error at Authentication] FTP Authentication failed: 530 Login incorrect {"robotId":"Robot_2","module":"Backup"}
