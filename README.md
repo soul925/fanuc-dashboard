@@ -844,5 +844,3 @@ The backend manages the OPC UA communication, while the web dashboard provides t
 
 ```
 
-**One important point:** I deliberately left the **actual OPC UA endpoint, port, and dashboard port** as configurable/placeholder information rather than inventing values that weren't established in our conversation. Your known Node IDs (`ns=3;i=30005`, `ns=3;i=40016`, `ns=1;i=301`, etc.) are included because you've already confirmed those.
-```
