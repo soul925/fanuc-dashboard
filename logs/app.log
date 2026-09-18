@@ -3308,3 +3308,4 @@ Err = (connect ECONNREFUSED 192.168.4.137:4880)
 [2026-08-28T11:53:23.153Z] [INFO] FANUC OPC UA Server listening on http://localhost:3000
 [2026-08-31T04:21:37.173Z] [INFO] FANUC OPC UA Server listening on http://localhost:3000
 [2026-08-31T07:14:37.979Z] [INFO] [RobotManager] Deleted robot profile: Robot_1
+[2026-09-18T03:59:04.581Z] [INFO] FANUC OPC UA Server listening on http://localhost:3000
